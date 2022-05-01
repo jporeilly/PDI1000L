@@ -493,13 +493,13 @@ Step2: Dummy
   </notepads>
   <order>
     <hop>
-      <from>Hello World</from>
-      <to>Dummy (do nothing)</to>
+      <from>gr-hello_world</from>
+      <to>dmmy-nothing</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>Dummy (do nothing)</name>
+    <name>dmmy-nothing</name>
     <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
@@ -524,7 +524,7 @@ Step2: Dummy
     </GUI>
   </step>
   <step>
-    <name>Hello World</name>
+    <name>gr-hello_world</name>
     <type>RowGenerator</type>
     <description/>
     <distribute>Y</distribute>
@@ -572,5 +572,17 @@ Step2: Dummy
   <slave-step-copy-partition-distribution>
   </slave-step-copy-partition-distribution>
   <slave_transformation>N</slave_transformation>
-  <attributes/>
+  <attributes>
+    <group>
+      <name>explorerState</name>
+      <attribute>
+        <key>gr-hello_world</key>
+        <value/>
+      </attribute>
+      <attribute>
+        <key>dmmy-nothing</key>
+        <value/>
+      </attribute>
+    </group>
+  </attributes>
 </transformation>

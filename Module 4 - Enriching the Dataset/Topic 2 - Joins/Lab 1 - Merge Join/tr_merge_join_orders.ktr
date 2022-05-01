@@ -436,7 +436,7 @@
   </info>
   <notepads>
     <notepad>
-      <note>Lab 2a: Merge Join</note>
+      <note>Lab 1a: Merge Join</note>
       <xloc>208</xloc>
       <yloc>32</yloc>
       <width>143</width>
@@ -457,12 +457,12 @@
       <drawshadow>Y</drawshadow>
     </notepad>
     <notepad>
-      <note>Solves the problem of merge rows.. GD4-1-1
+      <note>Solves the problem of merge rows.. 
 With a 'join' you dont have to ensure that each data stream has the same structure / layout. </note>
       <xloc>208</xloc>
       <yloc>80</yloc>
-      <width>668</width>
-      <heigth>54</heigth>
+      <width>561</width>
+      <heigth>48</heigth>
       <fontname>Calibri Light</fontname>
       <fontsize>11</fontsize>
       <fontbold>N</fontbold>
@@ -560,7 +560,7 @@ With a 'join' you dont have to ensure that each data stream has the same structu
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>F:\merged_orders</name>
+      <name>${Internal.Entry.Current.Directory}\merged_orders</name>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
       <extention>txt</extention>

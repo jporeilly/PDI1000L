@@ -552,18 +552,18 @@
   </connection>
   <order>
     <hop>
-      <from>CSV Input</from>
-      <to>stg_sales_data</to>
+      <from>csvi-sales_data</from>
+      <to>to-stg_sales_data</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>orders</from>
-      <to>stg_orders_merged</to>
+      <from>tfi-orders</from>
+      <to>to-stg_orders_merged</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>CSV Input</name>
+    <name>csvi-sales_data</name>
     <type>CsvInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -868,7 +868,7 @@
     </GUI>
   </step>
   <step>
-    <name>orders</name>
+    <name>tfi-orders</name>
     <type>TextFileInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -1048,7 +1048,7 @@
     </GUI>
   </step>
   <step>
-    <name>stg_orders_merged</name>
+    <name>to-stg_orders_merged</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -1059,7 +1059,7 @@
       <schema_name/>
     </partitioning>
     <connection>Sampledata</connection>
-    <schema/>
+    <schema>PUBLIC</schema>
     <table>STG_ORDERS_MERGED</table>
     <commit>1000</commit>
     <truncate>N</truncate>
@@ -1092,7 +1092,7 @@
     </GUI>
   </step>
   <step>
-    <name>stg_sales_data</name>
+    <name>to-stg_sales_data</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -1103,7 +1103,7 @@
       <schema_name/>
     </partitioning>
     <connection>Sampledata</connection>
-    <schema/>
+    <schema>PUBLIC</schema>
     <table>STG_SALES_DATA</table>
     <commit>1000</commit>
     <truncate>N</truncate>
@@ -1236,5 +1236,25 @@
   <slave-step-copy-partition-distribution>
   </slave-step-copy-partition-distribution>
   <slave_transformation>N</slave_transformation>
-  <attributes/>
+  <attributes>
+    <group>
+      <name>explorerState</name>
+      <attribute>
+        <key>to-stg_sales_data</key>
+        <value/>
+      </attribute>
+      <attribute>
+        <key>to-stg_orders_merged</key>
+        <value/>
+      </attribute>
+      <attribute>
+        <key>tfi-orders</key>
+        <value/>
+      </attribute>
+      <attribute>
+        <key>csvi-sales_data</key>
+        <value/>
+      </attribute>
+    </group>
+  </attributes>
 </transformation>

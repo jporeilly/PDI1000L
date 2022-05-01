@@ -436,7 +436,7 @@
   </info>
   <notepads>
     <notepad>
-      <note>Lab 4: Employee Update</note>
+      <note>Lab 3: Employee Update</note>
       <xloc>80</xloc>
       <yloc>32</yloc>
       <width>180</width>
@@ -509,7 +509,7 @@ Ensure all the Field mappings are correct</note>
     <server>localhost</server>
     <type>HYPERSONIC</type>
     <access>Native</access>
-    <database>sampledata</database>
+    <database>Sampledata</database>
     <port>9001</port>
     <username>pentaho_admin</username>
     <password>Encrypted 2be98afc86aa7f2e4bb18bd63c99dbdde</password>
@@ -535,7 +535,7 @@ Ensure all the Field mappings are correct</note>
       </attribute>
       <attribute>
         <code>PRESERVE_RESERVED_WORD_CASE</code>
-        <attribute>Y</attribute>
+        <attribute>N</attribute>
       </attribute>
       <attribute>
         <code>QUOTE_ALL_FIELDS</code>
@@ -557,13 +557,13 @@ Ensure all the Field mappings are correct</note>
   </connection>
   <order>
     <hop>
-      <from>Text File Input</from>
+      <from>tfi-employees_update</from>
       <to>Update employees</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>Text File Input</name>
+    <name>tfi-employees_update</name>
     <type>TextFileInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -601,7 +601,7 @@ Ensure all the Field mappings are correct</note>
     <length>Characters</length>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>C:\Pentaho-Training\DI-1000\Module 3 - Datasources\Lesson 2 - Working with Databases\Demo 3-2-5 - Table Insert - Update\Demo 3-2-4 - Table Update\employees_update.txt</name>
+      <name>${Internal.Entry.Current.Directory}/employees_update.txt</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -727,7 +727,7 @@ Ensure all the Field mappings are correct</note>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
-        <length>20</length>
+        <length>29</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
         <repeat>N</repeat>
@@ -850,5 +850,13 @@ Ensure all the Field mappings are correct</note>
   <slave-step-copy-partition-distribution>
   </slave-step-copy-partition-distribution>
   <slave_transformation>N</slave_transformation>
-  <attributes/>
+  <attributes>
+    <group>
+      <name>explorerState</name>
+      <attribute>
+        <key>tfi-employees_update</key>
+        <value/>
+      </attribute>
+    </group>
+  </attributes>
 </transformation>

@@ -504,8 +504,8 @@
  orders to ensure the merge is successful.</note>
       <xloc>144</xloc>
       <yloc>416</yloc>
-      <width>295</width>
-      <heigth>50</heigth>
+      <width>236</width>
+      <heigth>42</heigth>
       <fontname>Segoe UI</fontname>
       <fontsize>9</fontsize>
       <fontbold>N</fontbold>
@@ -529,12 +529,12 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>orders</from>
+      <from>tfi-orders</from>
       <to>Add description</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>description</from>
+      <from>tfi-description</from>
       <to>Select Description</to>
       <enabled>Y</enabled>
     </hop>
@@ -706,7 +706,7 @@
     </GUI>
   </step>
   <step>
-    <name>description</name>
+    <name>tfi-description</name>
     <type>TextFileInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -886,7 +886,7 @@
     </GUI>
   </step>
   <step>
-    <name>orders</name>
+    <name>tfi-orders</name>
     <type>TextFileInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -1061,6 +1061,17 @@
       <attribute>
         <key>Kettle Data Service</key>
         <value>{"namespace":"pentaho","id":"Kettle Data Service","name":"Kettle Data Service","description":"The elements describing data services based upon transformation output","metaStoreName":null}</value>
+      </attribute>
+    </group>
+    <group>
+      <name>explorerState</name>
+      <attribute>
+        <key>tfi-orders</key>
+        <value/>
+      </attribute>
+      <attribute>
+        <key>tfi-description</key>
+        <value/>
       </attribute>
     </group>
     <group>

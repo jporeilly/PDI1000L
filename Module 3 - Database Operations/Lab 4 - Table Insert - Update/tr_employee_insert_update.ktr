@@ -436,7 +436,7 @@
   </info>
   <notepads>
     <notepad>
-      <note>Lab 5: Employee Insert / Update</note>
+      <note>Lab 4: Employee Insert / Update</note>
       <xloc>144</xloc>
       <yloc>32</yloc>
       <width>236</width>
@@ -509,7 +509,7 @@ Ensure all the Field mappings are correct</note>
     <server>localhost</server>
     <type>HYPERSONIC</type>
     <access>Native</access>
-    <database>sampledata</database>
+    <database>Sampledata</database>
     <port>9001</port>
     <username>pentaho_admin</username>
     <password>Encrypted 2be98afc86aa7f2e4bb18bd63c99dbdde</password>
@@ -535,7 +535,7 @@ Ensure all the Field mappings are correct</note>
       </attribute>
       <attribute>
         <code>PRESERVE_RESERVED_WORD_CASE</code>
-        <attribute>Y</attribute>
+        <attribute>N</attribute>
       </attribute>
       <attribute>
         <code>QUOTE_ALL_FIELDS</code>
@@ -557,7 +557,7 @@ Ensure all the Field mappings are correct</note>
   </connection>
   <order>
     <hop>
-      <from>Text File Input</from>
+      <from>tfi-employess_update_insert</from>
       <to>Insert / Update Employees</to>
       <enabled>Y</enabled>
     </hop>
@@ -641,7 +641,7 @@ Ensure all the Field mappings are correct</note>
     </GUI>
   </step>
   <step>
-    <name>Text File Input</name>
+    <name>tfi-employess_update_insert</name>
     <type>TextFileInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -679,17 +679,7 @@ Ensure all the Field mappings are correct</note>
     <length>Characters</length>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name/>
-      <filemask/>
-      <exclude_filemask/>
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
       <name>${Internal.Entry.Current.Directory}\employees_insert_update.txt</name>
-      <filemask/>
-      <exclude_filemask/>
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-      <name/>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -865,5 +855,13 @@ Ensure all the Field mappings are correct</note>
   <slave-step-copy-partition-distribution>
   </slave-step-copy-partition-distribution>
   <slave_transformation>N</slave_transformation>
-  <attributes/>
+  <attributes>
+    <group>
+      <name>explorerState</name>
+      <attribute>
+        <key>tfi-employess_update_insert</key>
+        <value/>
+      </attribute>
+    </group>
+  </attributes>
 </transformation>

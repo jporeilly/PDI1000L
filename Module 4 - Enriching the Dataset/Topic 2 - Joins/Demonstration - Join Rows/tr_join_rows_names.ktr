@@ -449,8 +449,8 @@
       <note>Lab 1: Name Creator</note>
       <xloc>80</xloc>
       <yloc>80</yloc>
-      <width>154</width>
-      <heigth>30</heigth>
+      <width>223</width>
+      <heigth>40</heigth>
       <fontname>Segoe UI</fontname>
       <fontsize>11</fontsize>
       <fontbold>Y</fontbold>
@@ -470,8 +470,8 @@
       <note>Your instructor will take you through the various steps.  Notes are also in the manual.</note>
       <xloc>80</xloc>
       <yloc>128</yloc>
-      <width>456</width>
-      <heigth>26</heigth>
+      <width>679</width>
+      <heigth>34</heigth>
       <fontname>Segoe UI</fontname>
       <fontsize>9</fontsize>
       <fontbold>N</fontbold>
@@ -489,8 +489,8 @@
     </notepad>
     <notepad>
       <note>Join rows = Cartesian product</note>
-      <xloc>80</xloc>
-      <yloc>240</yloc>
+      <xloc>48</xloc>
+      <yloc>320</yloc>
       <width>168</width>
       <heigth>26</heigth>
       <fontname>Segoe UI</fontname>
@@ -512,8 +512,8 @@
       <note>Reservoir Sampling
 Allows you set return a number of records when the size
 of the dataset is unknown.</note>
-      <xloc>544</xloc>
-      <yloc>288</yloc>
+      <xloc>592</xloc>
+      <yloc>336</yloc>
       <width>306</width>
       <heigth>58</heigth>
       <fontname>Segoe UI</fontname>
@@ -598,8 +598,8 @@ of the dataset is unknown.</note>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>832</xloc>
-      <yloc>384</yloc>
+      <xloc>864</xloc>
+      <yloc>432</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -638,8 +638,8 @@ of the dataset is unknown.</note>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>544</xloc>
-      <yloc>384</yloc>
+      <xloc>592</xloc>
+      <yloc>432</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -675,8 +675,8 @@ of the dataset is unknown.</note>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>288</xloc>
-      <yloc>176</yloc>
+      <xloc>304</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -745,8 +745,8 @@ of the dataset is unknown.</note>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>96</xloc>
-      <yloc>176</yloc>
+      <xloc>128</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -784,8 +784,8 @@ of the dataset is unknown.</note>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>432</xloc>
-      <yloc>288</yloc>
+      <xloc>480</xloc>
+      <yloc>336</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -830,8 +830,8 @@ of the dataset is unknown.</note>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>432</xloc>
-      <yloc>384</yloc>
+      <xloc>480</xloc>
+      <yloc>432</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -900,8 +900,8 @@ of the dataset is unknown.</note>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>496</xloc>
-      <yloc>176</yloc>
+      <xloc>480</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -917,7 +917,7 @@ of the dataset is unknown.</note>
       <schema_name/>
     </partitioning>
     <formula>
-      <field_name>baby_initials</field_name>
+      <field_name>full_initials</field_name>
       <formula_string>first_name.substring(0,1)+middle_name.substring(0,1)+surname.substring(0,1)</formula_string>
       <value_type>String</value_type>
       <value_length>-1</value_length>
@@ -925,7 +925,7 @@ of the dataset is unknown.</note>
       <replace_field/>
     </formula>
     <formula>
-      <field_name>baby_name</field_name>
+      <field_name>name</field_name>
       <formula_string>first_name+" "+middle_name+" "+surname</formula_string>
       <value_type>String</value_type>
       <value_length>-1</value_length>
@@ -941,8 +941,8 @@ of the dataset is unknown.</note>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>672</xloc>
-      <yloc>384</yloc>
+      <xloc>720</xloc>
+      <yloc>432</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -982,8 +982,8 @@ of the dataset is unknown.</note>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>288</xloc>
-      <yloc>384</yloc>
+      <xloc>304</xloc>
+      <yloc>432</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
