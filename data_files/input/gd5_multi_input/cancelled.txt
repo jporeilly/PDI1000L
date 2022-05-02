@@ -1,0 +1,6 @@
+ordernumber;orderdate;shippeddate;status;customernumber;orderlinenumber;productcode;quantityordered;priceeach
+10362;2020-01-05;2020-01-10;Cancelled      ;161;4;S10_4698       ;22;182
+10362;2020-01-05;2020-01-10;Cancelled      ;161;1;S12_2823       ;22;131
+10362;2020-01-05;2020-01-10;Cancelled      ;161;3;S18_2625       ;23;53.9
+10362;2020-01-05;2020-01-10;Cancelled      ;161;2;S24_1578       ;50;91.3
+10366;2020-01-10;2020-01-12;Cancelled      ;381;2;S18_2870       ;49;105.6
