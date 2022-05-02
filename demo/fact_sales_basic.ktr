@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>fact_sales_basic</name>
+    <name>tr_join_rows</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -9,6 +9,16 @@
     <trans_status>0</trans_status>
     <directory>/</directory>
     <parameters>
+      <parameter>
+        <name>SEED</name>
+        <default_value>23</default_value>
+        <description/>
+      </parameter>
+      <parameter>
+        <name>surname</name>
+        <default_value>Smith</default_value>
+        <description>Family Surname</description>
+      </parameter>
     </parameters>
     <log>
       <trans-log-table>
@@ -25,7 +35,7 @@
         </field>
         <field>
           <id>CHANNEL_ID</id>
-          <enabled>N</enabled>
+          <enabled>Y</enabled>
           <name>CHANNEL_ID</name>
         </field>
         <field>
@@ -42,37 +52,37 @@
           <id>LINES_READ</id>
           <enabled>Y</enabled>
           <name>LINES_READ</name>
-          <subject>Table input</subject>
+          <subject/>
         </field>
         <field>
           <id>LINES_WRITTEN</id>
           <enabled>Y</enabled>
           <name>LINES_WRITTEN</name>
-          <subject>fact_sales</subject>
+          <subject/>
         </field>
         <field>
           <id>LINES_UPDATED</id>
           <enabled>Y</enabled>
           <name>LINES_UPDATED</name>
-          <subject>Table input</subject>
+          <subject/>
         </field>
         <field>
           <id>LINES_INPUT</id>
           <enabled>Y</enabled>
           <name>LINES_INPUT</name>
-          <subject>fact_sales</subject>
+          <subject/>
         </field>
         <field>
           <id>LINES_OUTPUT</id>
           <enabled>Y</enabled>
           <name>LINES_OUTPUT</name>
-          <subject>fact_sales</subject>
+          <subject/>
         </field>
         <field>
           <id>LINES_REJECTED</id>
           <enabled>Y</enabled>
           <name>LINES_REJECTED</name>
-          <subject>Table input</subject>
+          <subject/>
         </field>
         <field>
           <id>ERRORS</id>
@@ -106,7 +116,7 @@
         </field>
         <field>
           <id>LOG_FIELD</id>
-          <enabled>N</enabled>
+          <enabled>Y</enabled>
           <name>LOG_FIELD</name>
         </field>
         <field>
@@ -414,11 +424,11 @@
     <unique_connections>N</unique_connections>
     <feedback_shown>Y</feedback_shown>
     <feedback_size>50000</feedback_size>
-    <using_thread_priorities>N</using_thread_priorities>
+    <using_thread_priorities>Y</using_thread_priorities>
     <shared_objects_file/>
-    <capture_step_performance>Y</capture_step_performance>
+    <capture_step_performance>N</capture_step_performance>
     <step_performance_capturing_delay>1000</step_performance_capturing_delay>
-    <step_performance_capturing_size_limit/>
+    <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
     <dependencies>
     </dependencies>
     <partitionschemas>
@@ -427,23 +437,23 @@
     </slaveservers>
     <clusterschemas>
     </clusterschemas>
-    <created_user>admin</created_user>
-    <created_date>2015/01/04 17:14:09.190</created_date>
+    <created_user>-</created_user>
+    <created_date>2010/11/16 10:53:06.296</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2015/01/08 14:13:45.379</modified_date>
+    <modified_date>2016/11/28 11:42:31.290</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
     <notepad>
-      <note>Load the fact table fact_sales - basic and without delta loading</note>
-      <xloc>16</xloc>
-      <yloc>16</yloc>
-      <width>427</width>
-      <heigth>27</heigth>
-      <fontname>Ubuntu</fontname>
+      <note>Lab 1: Name Creator</note>
+      <xloc>80</xloc>
+      <yloc>80</yloc>
+      <width>223</width>
+      <heigth>40</heigth>
+      <fontname>Segoe UI</fontname>
       <fontsize>11</fontsize>
-      <fontbold>N</fontbold>
+      <fontbold>Y</fontbold>
       <fontitalic>N</fontitalic>
       <fontcolorred>0</fontcolorred>
       <fontcolorgreen>0</fontcolorgreen>
@@ -451,19 +461,19 @@
       <backgroundcolorred>255</backgroundcolorred>
       <backgroundcolorgreen>255</backgroundcolorgreen>
       <backgroundcolorblue>255</backgroundcolorblue>
-      <bordercolorred>100</bordercolorred>
-      <bordercolorgreen>100</bordercolorgreen>
-      <bordercolorblue>100</bordercolorblue>
-      <drawshadow>N</drawshadow>
+      <bordercolorred>255</bordercolorred>
+      <bordercolorgreen>255</bordercolorgreen>
+      <bordercolorblue>255</bordercolorblue>
+      <drawshadow>Y</drawshadow>
     </notepad>
     <notepad>
-      <note>Could be optimized (space) by dropping ordernumber, orderlinenumber and group by</note>
-      <xloc>32</xloc>
-      <yloc>544</yloc>
-      <width>580</width>
-      <heigth>27</heigth>
-      <fontname>Ubuntu</fontname>
-      <fontsize>11</fontsize>
+      <note>Your instructor will take you through the various steps.  Notes are also in the manual.</note>
+      <xloc>80</xloc>
+      <yloc>128</yloc>
+      <width>679</width>
+      <heigth>34</heigth>
+      <fontname>Segoe UI</fontname>
+      <fontsize>9</fontsize>
       <fontbold>N</fontbold>
       <fontitalic>N</fontitalic>
       <fontcolorred>0</fontcolorred>
@@ -472,178 +482,129 @@
       <backgroundcolorred>255</backgroundcolorred>
       <backgroundcolorgreen>255</backgroundcolorgreen>
       <backgroundcolorblue>255</backgroundcolorblue>
-      <bordercolorred>100</bordercolorred>
-      <bordercolorgreen>100</bordercolorgreen>
-      <bordercolorblue>100</bordercolorblue>
-      <drawshadow>N</drawshadow>
+      <bordercolorred>255</bordercolorred>
+      <bordercolorgreen>255</bordercolorgreen>
+      <bordercolorblue>255</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>Join rows = Cartesian product</note>
+      <xloc>48</xloc>
+      <yloc>320</yloc>
+      <width>168</width>
+      <heigth>26</heigth>
+      <fontname>Segoe UI</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>255</backgroundcolorgreen>
+      <backgroundcolorblue>255</backgroundcolorblue>
+      <bordercolorred>192</bordercolorred>
+      <bordercolorgreen>192</bordercolorgreen>
+      <bordercolorblue>192</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>Reservoir Sampling
+Allows you set return a number of records when the size
+of the dataset is unknown.</note>
+      <xloc>592</xloc>
+      <yloc>336</yloc>
+      <width>306</width>
+      <heigth>58</heigth>
+      <fontname>Segoe UI</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>255</backgroundcolorgreen>
+      <backgroundcolorblue>255</backgroundcolorblue>
+      <bordercolorred>192</bordercolorred>
+      <bordercolorgreen>192</bordercolorgreen>
+      <bordercolorblue>192</bordercolorblue>
+      <drawshadow>Y</drawshadow>
     </notepad>
   </notepads>
-  <connection>
-    <name>pentaho_olap</name>
-    <server>localhost</server>
-    <type>POSTGRESQL</type>
-    <access>Native</access>
-    <database>pentaho_olap</database>
-    <port>5432</port>
-    <username>pentaho</username>
-    <password>Encrypted 2be98afc86ad79397b80ea162dac3fd89</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>IS_CLUSTERED</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>PORT_NUMBER</code>
-        <attribute>5432</attribute>
-      </attribute>
-      <attribute>
-        <code>PRESERVE_RESERVED_WORD_CASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>QUOTE_ALL_FIELDS</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>USE_POOLING</code>
-        <attribute>N</attribute>
-      </attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>pentaho_oltp</name>
-    <server>localhost</server>
-    <type>POSTGRESQL</type>
-    <access>Native</access>
-    <database>pentaho_oltp</database>
-    <port>5432</port>
-    <username>pentaho</username>
-    <password>Encrypted 2be98afc86ad79397b80ea162dac3fd89</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>IS_CLUSTERED</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>PORT_NUMBER</code>
-        <attribute>5432</attribute>
-      </attribute>
-      <attribute>
-        <code>PRESERVE_RESERVED_WORD_CASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>QUOTE_ALL_FIELDS</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>USE_POOLING</code>
-        <attribute>N</attribute>
-      </attribute>
-    </attributes>
-  </connection>
   <order>
     <hop>
-      <from>orderdetails</from>
-      <to>orders</to>
+      <from>first name</from>
+      <to>all possible first and middle name combinations</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>orders</from>
-      <to>lookup ordertimeid</to>
+      <from>middle name</from>
+      <to>all possible first and middle name combinations</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>dim_time</from>
-      <to>lookup ordertimeid</to>
+      <from>get ${surname}</from>
+      <to>join surname</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>lookup ordertimeid</from>
-      <to>lookup requiredtimeid</to>
+      <from>all possible first and middle name combinations</from>
+      <to>name_initials</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>dim_time</from>
-      <to>lookup requiredtimeid</to>
+      <from>name +surname</from>
+      <to>Select a name</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>lookup requiredtimeid</from>
-      <to>lookup shippedtimeid</to>
+      <from>name_initials</from>
+      <to>join surname</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>dim_time</from>
-      <to>lookup shippedtimeid</to>
+      <from>join surname</from>
+      <to>Select values</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>lookup shippedtimeid</from>
-      <to>dim_product</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>dim_product</from>
-      <to>dim_customer</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Select the fact columns</from>
-      <to>fact_sales</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>totalprice</from>
-      <to>Select the fact columns</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>dim_customer</from>
-      <to>totalprice</to>
+      <from>Select values</from>
+      <to>name +surname</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>Select the fact columns</name>
+    <name>Select a name</name>
+    <type>ReservoirSampling</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <reservoir_sampling>
+      <sample_size>5</sample_size>
+      <seed>${SEED}</seed>
+    </reservoir_sampling>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>864</xloc>
+      <yloc>432</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Select values</name>
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
@@ -655,34 +616,16 @@
     </partitioning>
     <fields>
       <field>
-        <name>ordernumber</name>
+        <name>first_name</name>
       </field>
       <field>
-        <name>orderlinenumber</name>
+        <name>middle_name</name>
       </field>
       <field>
-        <name>status</name>
+        <name>surname</name>
       </field>
       <field>
-        <name>ordertimeid</name>
-      </field>
-      <field>
-        <name>requiredtimeid</name>
-      </field>
-      <field>
-        <name>shippedtimeid</name>
-      </field>
-      <field>
-        <name>productid</name>
-      </field>
-      <field>
-        <name>customerid</name>
-      </field>
-      <field>
-        <name>quantityordered</name>
-      </field>
-      <field>
-        <name>totalprice</name>
+        <name>initials</name>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -695,14 +638,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>360</xloc>
-      <yloc>440</yloc>
+      <xloc>592</xloc>
+      <yloc>432</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>dim_customer</name>
-    <type>DimensionLookup</type>
+    <name>all possible first and middle name combinations</name>
+    <type>JoinRows</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -711,38 +654,18 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <schema/>
-    <table>dim_customer</table>
-    <connection>pentaho_olap</connection>
-    <commit>100</commit>
-    <update>N</update>
-    <fields>
-      <key>
-        <name>customernumber</name>
-        <lookup>customernumber</lookup>
-      </key>
-      <date>
-        <name/>
-        <from>date_from</from>
-        <to>date_to</to>
-      </date>
-      <return>
-        <name>customerid</name>
-        <rename/>
-        <creation_method>tablemax</creation_method>
-        <use_autoinc>N</use_autoinc>
-        <version>version</version>
-      </return>
-    </fields>
-    <sequence/>
-    <min_year>1900</min_year>
-    <max_year>2199</max_year>
-    <cache_size>5000</cache_size>
-    <preload_cache>N</preload_cache>
-    <use_start_date_alternative>N</use_start_date_alternative>
-    <start_date_alternative>none</start_date_alternative>
-    <start_date_field_name/>
-    <useBatch>N</useBatch>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <cache_size>500</cache_size>
+    <main/>
+    <compare>
+      <condition>
+        <negated>N</negated>
+        <leftvalue/>
+        <function>=</function>
+        <rightvalue/>
+      </condition>
+    </compare>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -752,14 +675,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>780</xloc>
-      <yloc>380</yloc>
+      <xloc>304</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>dim_product</name>
-    <type>DimensionLookup</type>
+    <name>first name</name>
+    <type>DataGrid</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -768,364 +691,51 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <schema/>
-    <table>dim_product</table>
-    <connection>pentaho_olap</connection>
-    <commit>100</commit>
-    <update>N</update>
     <fields>
-      <key>
-        <name>productcode</name>
-        <lookup>productcode</lookup>
-      </key>
-      <date>
-        <name/>
-        <from>date_from</from>
-        <to>date_to</to>
-      </date>
       <field>
-        <name>productvendor</name>
-        <lookup>productvendor</lookup>
-        <update>None</update>
-      </field>
-      <return>
-        <name>productid</name>
-        <rename/>
-        <creation_method>tablemax</creation_method>
-        <use_autoinc>N</use_autoinc>
-        <version>version</version>
-      </return>
-    </fields>
-    <sequence/>
-    <min_year>1900</min_year>
-    <max_year>2199</max_year>
-    <cache_size>5000</cache_size>
-    <preload_cache>N</preload_cache>
-    <use_start_date_alternative>N</use_start_date_alternative>
-    <start_date_alternative>none</start_date_alternative>
-    <start_date_field_name/>
-    <useBatch>N</useBatch>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>780</xloc>
-      <yloc>280</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>dim_time</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>pentaho_olap</connection>
-    <sql>SELECT
-  timeid
-, timedate
-FROM dim_time
-</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cached_row_meta_active>N</cached_row_meta_active>
-    <row-meta/>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>520</xloc>
-      <yloc>0</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>fact_sales</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>pentaho_olap</connection>
-    <schema/>
-    <table>fact_sales</table>
-    <commit>100</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>N</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>140</xloc>
-      <yloc>440</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>lookup ordertimeid</name>
-    <type>StreamLookup</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <from>dim_time</from>
-    <input_sorted>N</input_sorted>
-    <preserve_memory>Y</preserve_memory>
-    <sorted_list>N</sorted_list>
-    <integer_pair>N</integer_pair>
-    <lookup>
-      <key>
-        <name>orderdate</name>
-        <field>timedate</field>
-      </key>
-      <value>
-        <name>timeid</name>
-        <rename>ordertimeid</rename>
-        <default/>
-        <type>Integer</type>
-      </value>
-    </lookup>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>300</xloc>
-      <yloc>200</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>lookup requiredtimeid</name>
-    <type>StreamLookup</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <from>dim_time</from>
-    <input_sorted>N</input_sorted>
-    <preserve_memory>Y</preserve_memory>
-    <sorted_list>N</sorted_list>
-    <integer_pair>N</integer_pair>
-    <lookup>
-      <key>
-        <name>requireddate</name>
-        <field>timedate</field>
-      </key>
-      <value>
-        <name>timeid</name>
-        <rename>requiredtimeid</rename>
-        <default/>
-        <type>Integer</type>
-      </value>
-    </lookup>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>520</xloc>
-      <yloc>200</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>lookup shippedtimeid</name>
-    <type>StreamLookup</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <from>dim_time</from>
-    <input_sorted>N</input_sorted>
-    <preserve_memory>Y</preserve_memory>
-    <sorted_list>N</sorted_list>
-    <integer_pair>N</integer_pair>
-    <lookup>
-      <key>
-        <name>shippeddate</name>
-        <field>timedate</field>
-      </key>
-      <value>
-        <name>timeid</name>
-        <rename>shippedtimeid</rename>
-        <default/>
-        <type>Integer</type>
-      </value>
-    </lookup>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>780</xloc>
-      <yloc>200</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>orderdetails</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>pentaho_oltp</connection>
-    <sql>SELECT
-  ordernumber
-, productcode
-, quantityordered
-, priceeach
-, orderlinenumber
-FROM orderdetails
-</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cached_row_meta_active>N</cached_row_meta_active>
-    <row-meta/>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>60</xloc>
-      <yloc>200</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>orders</name>
-    <type>DBLookup</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>pentaho_oltp</connection>
-    <cache>Y</cache>
-    <cache_load_all>N</cache_load_all>
-    <cache_size>1000</cache_size>
-    <lookup>
-      <schema/>
-      <table>orders</table>
-      <orderby/>
-      <fail_on_multiple>N</fail_on_multiple>
-      <eat_row_on_failure>N</eat_row_on_failure>
-      <key>
-        <name>ordernumber</name>
-        <field>ordernumber</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>orderdate</name>
-        <rename>orderdate</rename>
-        <default/>
-        <type>Date</type>
-      </value>
-      <value>
-        <name>requireddate</name>
-        <rename>requireddate</rename>
-        <default/>
-        <type>Date</type>
-      </value>
-      <value>
-        <name>shippeddate</name>
-        <rename>shippeddate</rename>
-        <default/>
-        <type>Date</type>
-      </value>
-      <value>
-        <name>status</name>
-        <rename>status</rename>
-        <default/>
+        <name>first_name</name>
         <type>String</type>
-      </value>
-      <value>
-        <name>customernumber</name>
-        <rename>customernumber</rename>
-        <default/>
-        <type>Integer</type>
-      </value>
-    </lookup>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <data>
+      <line>
+        <item>Oliver</item>
+      </line>
+      <line>
+        <item>Jack</item>
+      </line>
+      <line>
+        <item>Harry</item>
+      </line>
+      <line>
+        <item>George</item>
+      </line>
+      <line>
+        <item>Jacob</item>
+      </line>
+      <line>
+        <item>Charlie</item>
+      </line>
+      <line>
+        <item>Noah</item>
+      </line>
+      <line>
+        <item>William</item>
+      </line>
+      <line>
+        <item>Thomas</item>
+      </line>
+      <line>
+        <item>Oscar</item>
+      </line>
+    </data>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -1135,14 +745,14 @@ FROM orderdetails
       </output>
     </remotesteps>
     <GUI>
-      <xloc>160</xloc>
-      <yloc>200</yloc>
+      <xloc>128</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>totalprice</name>
-    <type>Calculator</type>
+    <name>get ${surname}</name>
+    <type>GetVariable</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -1151,22 +761,177 @@ FROM orderdetails
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <failIfNoFile>N</failIfNoFile>
-    <calculation>
-      <field_name>totalprice</field_name>
-      <calc_type>MULTIPLY</calc_type>
-      <field_a>quantityordered</field_a>
-      <field_b>priceeach</field_b>
-      <field_c/>
-      <value_type>Number</value_type>
+    <fields>
+      <field>
+        <name>surname</name>
+        <variable>${surname}</variable>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>480</xloc>
+      <yloc>336</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>join surname</name>
+    <type>JoinRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <cache_size>500</cache_size>
+    <main>new_component</main>
+    <compare>
+      <condition>
+        <negated>Y</negated>
+        <leftvalue>initials</leftvalue>
+        <function>IN LIST</function>
+        <rightvalue/>
+        <value>
+          <name>constant</name>
+          <type>String</type>
+          <text>AA;DD;PP;TT;OO;RR;WW</text>
+          <length>-1</length>
+          <precision>-1</precision>
+          <isnull>N</isnull>
+          <mask/>
+        </value>
+      </condition>
+    </compare>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>480</xloc>
+      <yloc>432</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>middle name</name>
+    <type>DataGrid</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>middle_name</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <data>
+      <line>
+        <item>James</item>
+      </line>
+      <line>
+        <item>John</item>
+      </line>
+      <line>
+        <item>William</item>
+      </line>
+      <line>
+        <item>Thomas</item>
+      </line>
+      <line>
+        <item>Alexander</item>
+      </line>
+      <line>
+        <item>Robert</item>
+      </line>
+      <line>
+        <item>Michael</item>
+      </line>
+      <line>
+        <item>David</item>
+      </line>
+      <line>
+        <item>Andrew</item>
+      </line>
+      <line>
+        <item>Peter</item>
+      </line>
+    </data>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>480</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>name +surname</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <formula>
+      <field_name>full_initials</field_name>
+      <formula_string>first_name.substring(0,1)+middle_name.substring(0,1)+surname.substring(0,1)</formula_string>
+      <value_type>String</value_type>
       <value_length>-1</value_length>
       <value_precision>-1</value_precision>
-      <remove>N</remove>
-      <conversion_mask>0.0</conversion_mask>
-      <decimal_symbol>.</decimal_symbol>
-      <grouping_symbol>,</grouping_symbol>
-      <currency_symbol/>
-    </calculation>
+      <replace_field/>
+    </formula>
+    <formula>
+      <field_name>name</field_name>
+      <formula_string>first_name+" "+middle_name+" "+surname</formula_string>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <replace_field/>
+    </formula>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -1176,8 +941,49 @@ FROM orderdetails
       </output>
     </remotesteps>
     <GUI>
-      <xloc>580</xloc>
-      <yloc>440</yloc>
+      <xloc>720</xloc>
+      <yloc>432</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>name_initials</name>
+    <type>Janino</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <formula>
+      <field_name>first_middle_name</field_name>
+      <formula_string>first_name+" "+middle_name</formula_string>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <replace_field/>
+    </formula>
+    <formula>
+      <field_name>initials</field_name>
+      <formula_string>first_name.substring(0,1)+middle_name.substring(0,1)</formula_string>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <replace_field/>
+    </formula>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>304</xloc>
+      <yloc>432</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1186,9 +992,5 @@ FROM orderdetails
   <slave-step-copy-partition-distribution>
   </slave-step-copy-partition-distribution>
   <slave_transformation>N</slave_transformation>
-  <attributes>
-    <group>
-      <name>DataService</name>
-    </group>
-  </attributes>
+  <attributes/>
 </transformation>

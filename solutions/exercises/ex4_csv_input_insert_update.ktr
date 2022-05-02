@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>ex4_csv_input_insert_update</name>
+    <name>tr_employee_update</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -427,48 +427,45 @@
     </slaveservers>
     <clusterschemas>
     </clusterschemas>
-    <created_user>admin</created_user>
-    <created_date>2014/12/27 16:36:19.757</created_date>
-    <modified_user>admin</modified_user>
-    <modified_date>2015/01/05 13:27:23.644</modified_date>
+    <created_user>-</created_user>
+    <created_date>2010/09/11 15:18:45.703</created_date>
+    <modified_user>-</modified_user>
+    <modified_date>2010/09/11 15:18:45.703</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
     <notepad>
-      <note>Exercise 4 - Part I: Insert / Update</note>
-      <xloc>16</xloc>
-      <yloc>16</yloc>
-      <width>259</width>
-      <heigth>29</heigth>
-      <fontname>Tahoma</fontname>
+      <note>Lab 3: Employee Update</note>
+      <xloc>80</xloc>
+      <yloc>32</yloc>
+      <width>180</width>
+      <heigth>30</heigth>
+      <fontname>Segoe UI</fontname>
       <fontsize>11</fontsize>
-      <fontbold>N</fontbold>
+      <fontbold>Y</fontbold>
       <fontitalic>N</fontitalic>
-      <fontcolorred>255</fontcolorred>
+      <fontcolorred>0</fontcolorred>
       <fontcolorgreen>0</fontcolorgreen>
       <fontcolorblue>0</fontcolorblue>
       <backgroundcolorred>255</backgroundcolorred>
       <backgroundcolorgreen>255</backgroundcolorgreen>
       <backgroundcolorblue>255</backgroundcolorblue>
-      <bordercolorred>100</bordercolorred>
-      <bordercolorgreen>100</bordercolorgreen>
-      <bordercolorblue>100</bordercolorblue>
+      <bordercolorred>255</bordercolorred>
+      <bordercolorgreen>255</bordercolorgreen>
+      <bordercolorblue>255</bordercolorblue>
       <drawshadow>Y</drawshadow>
     </notepad>
     <notepad>
-      <note>iu-test_insertupdate
+      <note>In this demonstration the EMPLOYEE table is just updated.  
 
-An Insert/Update step configured to
-INSERT / UPDATE based on [ordernumber]
-and [orderlinenumber] into the 'test_insertupdate'
-table.</note>
-      <xloc>352</xloc>
-      <yloc>192</yloc>
-      <width>283</width>
-      <heigth>93</heigth>
-      <fontname>Tahoma</fontname>
-      <fontsize>8</fontsize>
+Inspect the EMPLOYEE Table and compare the records against the employee_update.txt</note>
+      <xloc>80</xloc>
+      <yloc>64</yloc>
+      <width>465</width>
+      <heigth>57</heigth>
+      <fontname>Calibri Light</fontname>
+      <fontsize>10</fontsize>
       <fontbold>N</fontbold>
       <fontitalic>N</fontitalic>
       <fontcolorred>0</fontcolorred>
@@ -477,22 +474,22 @@ table.</note>
       <backgroundcolorred>255</backgroundcolorred>
       <backgroundcolorgreen>255</backgroundcolorgreen>
       <backgroundcolorblue>255</backgroundcolorblue>
-      <bordercolorred>192</bordercolorred>
-      <bordercolorgreen>192</bordercolorgreen>
-      <bordercolorblue>192</bordercolorblue>
+      <bordercolorred>255</bordercolorred>
+      <bordercolorgreen>255</bordercolorgreen>
+      <bordercolorblue>255</bordercolorblue>
       <drawshadow>Y</drawshadow>
     </notepad>
     <notepad>
-      <note>csvi-ex3_orders_w_total.txt
+      <note>The stream fields are mapped to the database table by ensuring:
+EMPLOYEE_NUMBER = EMPLOYEENUMBER
 
-A CSV file input step configured to read 
-orders from [csvi-ex3_orders_w_total.txt].</note>
-      <xloc>32</xloc>
-      <yloc>192</yloc>
-      <width>233</width>
-      <heigth>65</heigth>
-      <fontname>Tahoma</fontname>
-      <fontsize>8</fontsize>
+Ensure all the Field mappings are correct</note>
+      <xloc>112</xloc>
+      <yloc>240</yloc>
+      <width>346</width>
+      <heigth>73</heigth>
+      <fontname>Segoe UI</fontname>
+      <fontsize>9</fontsize>
       <fontbold>N</fontbold>
       <fontitalic>N</fontitalic>
       <fontcolorred>0</fontcolorred>
@@ -508,14 +505,14 @@ orders from [csvi-ex3_orders_w_total.txt].</note>
     </notepad>
   </notepads>
   <connection>
-    <name>pentaho_olap</name>
+    <name>Sampledata</name>
     <server>localhost</server>
-    <type>POSTGRESQL</type>
+    <type>HYPERSONIC</type>
     <access>Native</access>
-    <database>pentaho_olap</database>
-    <port>5432</port>
-    <username>pentaho</username>
-    <password>Encrypted 2be98afc86ad79397b80ea162dac3fd89</password>
+    <database>Sampledata</database>
+    <port>9001</port>
+    <username>pentaho_admin</username>
+    <password>Encrypted 2be98afc86aa7f2e4bb18bd63c99dbdde</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -534,7 +531,7 @@ orders from [csvi-ex3_orders_w_total.txt].</note>
       </attribute>
       <attribute>
         <code>PORT_NUMBER</code>
-        <attribute>5432</attribute>
+        <attribute>9001</attribute>
       </attribute>
       <attribute>
         <code>PRESERVE_RESERVED_WORD_CASE</code>
@@ -546,11 +543,11 @@ orders from [csvi-ex3_orders_w_total.txt].</note>
       </attribute>
       <attribute>
         <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
-        <attribute>N</attribute>
+        <attribute>Y</attribute>
       </attribute>
       <attribute>
         <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
-        <attribute>N</attribute>
+        <attribute>Y</attribute>
       </attribute>
       <attribute>
         <code>USE_POOLING</code>
@@ -560,14 +557,14 @@ orders from [csvi-ex3_orders_w_total.txt].</note>
   </connection>
   <order>
     <hop>
-      <from>csvi-ex3_orders_w_total.txt</from>
-      <to>iu-test_insertupdate</to>
+      <from>tfi-employees_update</from>
+      <to>Update employees</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>Table input 3</name>
-    <type>TableInput</type>
+    <name>tfi-employees_update</name>
+    <type>TextFileInput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -576,120 +573,191 @@ orders from [csvi-ex3_orders_w_total.txt].</note>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection/>
-    <sql>SELECT
-  ordernumber
-, orderdate
-, requireddate
-, shippeddate
-, status
-, comments
-, customernumber
-FROM orders_basic
-</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cached_row_meta_active>N</cached_row_meta_active>
-    <row-meta/>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>208</xloc>
-      <yloc>176</yloc>
-      <draw>N</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>csvi-ex3_orders_w_total.txt</name>
-    <type>CsvInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <filename>${DIR_OUTPUT}/ex3_orders_w_total.txt</filename>
-    <filename_field/>
-    <rownum_field/>
-    <include_filename>N</include_filename>
-    <separator>;</separator>
+    <accept_filenames>N</accept_filenames>
+    <passing_through_fields>N</passing_through_fields>
+    <accept_field/>
+    <accept_stepname/>
+    <separator>,</separator>
     <enclosure>"</enclosure>
+    <enclosure_breaks>N</enclosure_breaks>
+    <escapechar/>
     <header>Y</header>
-    <buffer_size>50000</buffer_size>
-    <lazy_conversion>Y</lazy_conversion>
-    <add_filename_result>N</add_filename_result>
-    <parallel>N</parallel>
-    <newline_possible>N</newline_possible>
-    <format/>
+    <nr_headerlines>1</nr_headerlines>
+    <footer>N</footer>
+    <nr_footerlines>1</nr_footerlines>
+    <line_wrapped>N</line_wrapped>
+    <nr_wraps>1</nr_wraps>
+    <layout_paged>N</layout_paged>
+    <nr_lines_per_page>80</nr_lines_per_page>
+    <nr_lines_doc_header>0</nr_lines_doc_header>
+    <noempty>Y</noempty>
+    <include>N</include>
+    <include_field/>
+    <rownum>N</rownum>
+    <rownumByFile>N</rownumByFile>
+    <rownum_field/>
+    <format>mixed</format>
     <encoding/>
+    <length>Characters</length>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <file>
+      <name>${Internal.Entry.Current.Directory}/employees_update.txt</name>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <type>CSV</type>
+      <compression>None</compression>
+    </file>
+    <filters>
+    </filters>
     <fields>
       <field>
-        <name>ordernumber</name>
+        <name>EMPLOYEE_NUMBER</name>
         <type>Integer</type>
         <format>#</format>
-        <currency>$</currency>
+        <currency>£</currency>
         <decimal>.</decimal>
         <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
         <length>15</length>
-        <precision>-1</precision>
+        <precision>0</precision>
         <trim_type>none</trim_type>
+        <repeat>N</repeat>
       </field>
       <field>
-        <name>productcode</name>
+        <name>LASTNAME</name>
         <type>String</type>
         <format/>
-        <currency>$</currency>
+        <currency>£</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>9</length>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>6</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
+        <repeat>N</repeat>
       </field>
       <field>
-        <name>quantityordered</name>
+        <name>FIRSTNAME</name>
+        <type>String</type>
+        <format/>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>6</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>EXT</name>
+        <type>String</type>
+        <format/>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>5</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>EMAIL</name>
+        <type>String</type>
+        <format/>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>28</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>OFFICE</name>
         <type>Integer</type>
         <format>#</format>
-        <currency>$</currency>
+        <currency>£</currency>
         <decimal>.</decimal>
         <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
         <length>15</length>
-        <precision>-1</precision>
+        <precision>0</precision>
         <trim_type>none</trim_type>
+        <repeat>N</repeat>
       </field>
       <field>
-        <name>priceeach</name>
-        <type>Number</type>
-        <format>#.#</format>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>15</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>orderlinenumber</name>
+        <name>REPORTS</name>
         <type>Integer</type>
         <format>#</format>
-        <currency>$</currency>
+        <currency>£</currency>
         <decimal>.</decimal>
         <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
         <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>TITLE</name>
+        <type>String</type>
+        <format/>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>29</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
+        <repeat>N</repeat>
       </field>
     </fields>
+    <limit>0</limit>
+    <error_ignored>N</error_ignored>
+    <skip_bad_files>N</skip_bad_files>
+    <file_error_field/>
+    <file_error_message_field/>
+    <error_line_skipped>N</error_line_skipped>
+    <error_count_field/>
+    <error_fields_field/>
+    <error_text_field/>
+    <bad_line_files_destination_directory/>
+    <bad_line_files_extension>warning</bad_line_files_extension>
+    <error_line_files_destination_directory/>
+    <error_line_files_extension>error</error_line_files_extension>
+    <line_number_files_destination_directory/>
+    <line_number_files_extension>line</line_number_files_extension>
+    <date_format_lenient>Y</date_format_lenient>
+    <date_format_locale>en_US</date_format_locale>
+    <shortFileFieldName/>
+    <pathFieldName/>
+    <hiddenFieldName/>
+    <lastModificationTimeFieldName/>
+    <uriNameFieldName/>
+    <rootUriNameFieldName/>
+    <extensionFieldName/>
+    <sizeFieldName/>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -700,13 +768,13 @@ FROM orders_basic
     </remotesteps>
     <GUI>
       <xloc>112</xloc>
-      <yloc>112</yloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>iu-test_insertupdate</name>
-    <type>InsertUpdate</type>
+    <name>Update employees</name>
+    <type>Update</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -715,48 +783,52 @@ FROM orders_basic
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>pentaho_olap</connection>
+    <connection>Sampledata</connection>
+    <skip_lookup>N</skip_lookup>
     <commit>100</commit>
-    <update_bypassed>N</update_bypassed>
+    <use_batch>N</use_batch>
+    <error_ignored>N</error_ignored>
+    <ignore_flag_field/>
     <lookup>
       <schema/>
-      <table>test_insertupdate</table>
+      <table>EMPLOYEES</table>
       <key>
-        <name>ordernumber</name>
-        <field>ordernumber</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>orderlinenumber</name>
-        <field>orderlinenumber</field>
+        <name>EMPLOYEE_NUMBER</name>
+        <field>EMPLOYEENUMBER</field>
         <condition>=</condition>
         <name2/>
       </key>
       <value>
-        <name>ordernumber</name>
-        <rename>ordernumber</rename>
-        <update>Y</update>
+        <name>EMPLOYEENUMBER</name>
+        <rename>EMPLOYEE_NUMBER</rename>
       </value>
       <value>
-        <name>productcode</name>
-        <rename>productcode</rename>
-        <update>Y</update>
+        <name>LASTNAME</name>
+        <rename>LASTNAME</rename>
       </value>
       <value>
-        <name>quantityordered</name>
-        <rename>quantityordered</rename>
-        <update>Y</update>
+        <name>FIRSTNAME</name>
+        <rename>FIRSTNAME</rename>
       </value>
       <value>
-        <name>priceeach</name>
-        <rename>priceeach</rename>
-        <update>Y</update>
+        <name>EXTENSION</name>
+        <rename>EXT</rename>
       </value>
       <value>
-        <name>orderlinenumber</name>
-        <rename>orderlinenumber</rename>
-        <update>Y</update>
+        <name>EMAIL</name>
+        <rename>EMAIL</rename>
+      </value>
+      <value>
+        <name>OFFICECODE</name>
+        <rename>OFFICE</rename>
+      </value>
+      <value>
+        <name>REPORTSTO</name>
+        <rename>REPORTS</rename>
+      </value>
+      <value>
+        <name>JOBTITLE</name>
+        <rename>TITLE</rename>
       </value>
     </lookup>
     <attributes/>
@@ -768,8 +840,8 @@ FROM orders_basic
       </output>
     </remotesteps>
     <GUI>
-      <xloc>432</xloc>
-      <yloc>112</yloc>
+      <xloc>368</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -780,10 +852,11 @@ FROM orders_basic
   <slave_transformation>N</slave_transformation>
   <attributes>
     <group>
-      <name>DataService</name>
-    </group>
-    <group>
       <name>explorerState</name>
+      <attribute>
+        <key>tfi-employees_update</key>
+        <value/>
+      </attribute>
     </group>
   </attributes>
 </transformation>

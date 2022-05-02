@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>ex1_select_values</name>
-    <description>Demonstrate gr, aseq, and sv steps</description>
-    <extended_description>This exercise is used to demonstrate the 
-Generate Rows, Add Sequence, and Select Values steps.</extended_description>
+    <name>tr_database_join</name>
+    <description/>
+    <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
@@ -26,7 +25,7 @@ Generate Rows, Add Sequence, and Select Values steps.</extended_description>
         </field>
         <field>
           <id>CHANNEL_ID</id>
-          <enabled>N</enabled>
+          <enabled>Y</enabled>
           <name>CHANNEL_ID</name>
         </field>
         <field>
@@ -71,7 +70,7 @@ Generate Rows, Add Sequence, and Select Values steps.</extended_description>
         </field>
         <field>
           <id>LINES_REJECTED</id>
-          <enabled>N</enabled>
+          <enabled>Y</enabled>
           <name>LINES_REJECTED</name>
           <subject/>
         </field>
@@ -107,7 +106,7 @@ Generate Rows, Add Sequence, and Select Values steps.</extended_description>
         </field>
         <field>
           <id>LOG_FIELD</id>
-          <enabled>N</enabled>
+          <enabled>Y</enabled>
           <name>LOG_FIELD</name>
         </field>
         <field>
@@ -409,7 +408,7 @@ Generate Rows, Add Sequence, and Select Values steps.</extended_description>
       <offset>0.0</offset>
       <maxdiff>0.0</maxdiff>
     </maxdate>
-    <size_rowset>1000</size_rowset>
+    <size_rowset>10000</size_rowset>
     <sleep_time_empty>50</sleep_time_empty>
     <sleep_time_full>50</sleep_time_full>
     <unique_connections>N</unique_connections>
@@ -419,73 +418,79 @@ Generate Rows, Add Sequence, and Select Values steps.</extended_description>
     <shared_objects_file/>
     <capture_step_performance>N</capture_step_performance>
     <step_performance_capturing_delay>1000</step_performance_capturing_delay>
-    <step_performance_capturing_size_limit/>
+    <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
     <dependencies>
     </dependencies>
     <partitionschemas>
-      <partitionschema>
-        <name>Partition</name>
-        <partition>
-          <id>part1</id>
-        </partition>
-        <partition>
-          <id>part2</id>
-        </partition>
-        <dynamic>Y</dynamic>
-        <partitions_per_slave>1</partitions_per_slave>
-      </partitionschema>
-      <partitionschema>
-        <name>PartitionSchema</name>
-        <dynamic>Y</dynamic>
-        <partitions_per_slave>1</partitions_per_slave>
-      </partitionschema>
     </partitionschemas>
     <slaveservers>
     </slaveservers>
     <clusterschemas>
     </clusterschemas>
-    <created_user>admin</created_user>
-    <created_date>2014/12/27 16:36:16.344</created_date>
+    <created_user>-</created_user>
+    <created_date>2010/11/20 09:16:19.109</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2015/01/17 22:30:04.899</modified_date>
+    <modified_date>2016/12/10 12:17:11.020</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
     <notepad>
-      <note>Exercise: Generate Rows, Add Sequence, and Select Values</note>
-      <xloc>16</xloc>
-      <yloc>16</yloc>
-      <width>447</width>
-      <heigth>29</heigth>
-      <fontname>Tahoma</fontname>
+      <note>Lab 2: Database Joins</note>
+      <xloc>128</xloc>
+      <yloc>48</yloc>
+      <width>161</width>
+      <heigth>30</heigth>
+      <fontname>Segoe UI</fontname>
+      <fontsize>11</fontsize>
+      <fontbold>Y</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>255</backgroundcolorgreen>
+      <backgroundcolorblue>255</backgroundcolorblue>
+      <bordercolorred>255</bordercolorred>
+      <bordercolorgreen>255</bordercolorgreen>
+      <bordercolorblue>255</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>A Database Join enables a query to be run against the table based on the fields.  </note>
+      <xloc>128</xloc>
+      <yloc>96</yloc>
+      <width>580</width>
+      <heigth>32</heigth>
+      <fontname>Calibri Light</fontname>
       <fontsize>11</fontsize>
       <fontbold>N</fontbold>
       <fontitalic>N</fontitalic>
-      <fontcolorred>255</fontcolorred>
+      <fontcolorred>0</fontcolorred>
       <fontcolorgreen>0</fontcolorgreen>
       <fontcolorblue>0</fontcolorblue>
       <backgroundcolorred>255</backgroundcolorred>
       <backgroundcolorgreen>255</backgroundcolorgreen>
       <backgroundcolorblue>255</backgroundcolorblue>
-      <bordercolorred>100</bordercolorred>
-      <bordercolorgreen>100</bordercolorgreen>
-      <bordercolorblue>100</bordercolorblue>
+      <bordercolorred>255</bordercolorred>
+      <bordercolorgreen>255</bordercolorgreen>
+      <bordercolorblue>255</bordercolorblue>
       <drawshadow>Y</drawshadow>
     </notepad>
     <notepad>
-      <note>gr-demo_fields
+      <note>Parameters:
 
-A Generate Rows step
-that's used to create
-some data for
-demonstration.</note>
-      <xloc>48</xloc>
-      <yloc>224</yloc>
-      <width>130</width>
-      <heigth>93</heigth>
-      <fontname>Tahoma</fontname>
-      <fontsize>8</fontsize>
+ Prod: Aston Martin
+            Ford Falcon
+            Corvette
+
+ max_price: 90,70,70</note>
+      <xloc>80</xloc>
+      <yloc>240</yloc>
+      <width>116</width>
+      <heigth>120</heigth>
+      <fontname>Segoe UI</fontname>
+      <fontsize>9</fontsize>
       <fontbold>N</fontbold>
       <fontitalic>N</fontitalic>
       <fontcolorred>0</fontcolorred>
@@ -500,45 +505,22 @@ demonstration.</note>
       <drawshadow>Y</drawshadow>
     </notepad>
     <notepad>
-      <note>aseq-valuename
+      <note>Condition
+   BUYPRICE was less than 90 and the column PRODUCTNAME contained %Aston Martin%
+   returns values for: PRODUCTNAME, PRODUCTSCALE
 
-An Add Sequence step
-that adds a new field
-named 'valuename' to
-hold a numbered
-sequence.</note>
-      <xloc>272</xloc>
-      <yloc>224</yloc>
-      <width>133</width>
-      <heigth>107</heigth>
-      <fontname>Tahoma</fontname>
-      <fontsize>8</fontsize>
-      <fontbold>N</fontbold>
-      <fontitalic>N</fontitalic>
-      <fontcolorred>0</fontcolorred>
-      <fontcolorgreen>0</fontcolorgreen>
-      <fontcolorblue>0</fontcolorblue>
-      <backgroundcolorred>255</backgroundcolorred>
-      <backgroundcolorgreen>255</backgroundcolorgreen>
-      <backgroundcolorblue>255</backgroundcolorblue>
-      <bordercolorred>192</bordercolorred>
-      <bordercolorgreen>192</bordercolorgreen>
-      <bordercolorblue>192</bordercolorblue>
-      <drawshadow>Y</drawshadow>
-    </notepad>
-    <notepad>
-      <note>sv-sel_reorder_duplicate
+   BUYPRICE was less than 70 and the column PRODUCTNAME contained %Ford Falcon%
+   returns null values for: PRODUCTNAME, PRODUCTSCALE
 
-A Select Values step
-configured to select,
-reorder and 
-duplicate fields.</note>
-      <xloc>496</xloc>
-      <yloc>224</yloc>
-      <width>143</width>
-      <heigth>93</heigth>
-      <fontname>Tahoma</fontname>
-      <fontsize>8</fontsize>
+   BUYPRICE was less than 70 and the column PRODUCTNAME contained %Corvette%
+   returns values for: PRODUCTNAME, PRODUCTSCALE
+</note>
+      <xloc>320</xloc>
+      <yloc>240</yloc>
+      <width>485</width>
+      <heigth>167</heigth>
+      <fontname>Segoe UI</fontname>
+      <fontsize>9</fontsize>
       <fontbold>N</fontbold>
       <fontitalic>N</fontitalic>
       <fontcolorred>0</fontcolorred>
@@ -553,21 +535,67 @@ duplicate fields.</note>
       <drawshadow>Y</drawshadow>
     </notepad>
   </notepads>
+  <connection>
+    <name>Sampledata</name>
+    <server>localhost</server>
+    <type>HYPERSONIC</type>
+    <access>Native</access>
+    <database>sampledata</database>
+    <port>9001</port>
+    <username>pentaho_admin</username>
+    <password>Encrypted 2be98afc86aa7f2e4bb18bd63c99dbdde</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>9001</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
   <order>
     <hop>
-      <from>gr-demo_fields</from>
-      <to>aseq-valuename</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>aseq-valuename</from>
-      <to>sv-sel_reorder_duplicate</to>
+      <from>some conditions</from>
+      <to>Database join</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>aseq-valuename</name>
-    <type>Sequence</type>
+    <name>Database join</name>
+    <type>DBJoin</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -576,16 +604,27 @@ duplicate fields.</note>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <valuename>valuename</valuename>
-    <use_database>N</use_database>
-    <connection/>
-    <schema/>
-    <seqname>SEQ_</seqname>
-    <use_counter>Y</use_counter>
-    <counter_name/>
-    <start_at>1</start_at>
-    <increment_by>1</increment_by>
-    <max_value>999999999</max_value>
+    <connection>Sampledata</connection>
+    <rowlimit>0</rowlimit>
+    <sql>SELECT PRODUCTNAME 
+     , PRODUCTSCALE
+     , BUYPRICE
+FROM   PRODUCTS
+WHERE  PRODUCTNAME LIKE concat('%',?,'%')
+AND    BUYPRICE &lt; ?
+</sql>
+    <outer_join>Y</outer_join>
+    <replace_vars>N</replace_vars>
+    <parameter>
+      <field>
+        <name>prod</name>
+        <type>String</type>
+      </field>
+      <field>
+        <name>max_price</name>
+        <type>Integer</type>
+      </field>
+    </parameter>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -596,13 +635,13 @@ duplicate fields.</note>
     </remotesteps>
     <GUI>
       <xloc>320</xloc>
-      <yloc>128</yloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>gr-demo_fields</name>
-    <type>RowGenerator</type>
+    <name>some conditions</name>
+    <type>DataGrid</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -613,47 +652,42 @@ duplicate fields.</note>
     </partitioning>
     <fields>
       <field>
-        <name>wantField</name>
+        <name>prod</name>
         <type>String</type>
         <format/>
         <currency/>
         <decimal/>
         <group/>
-        <nullif>PDI solves integration challenges.</nullif>
-        <length>100</length>
+        <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
       </field>
       <field>
-        <name>dontWantField</name>
+        <name>max_price</name>
         <type>Integer</type>
-        <format>#</format>
+        <format/>
         <currency/>
         <decimal/>
         <group/>
-        <nullif>1</nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>dontWantDateField</name>
-        <type>Date</type>
-        <format>MM/dd/yyyy</format>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif>05/21/1956</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
       </field>
     </fields>
-    <limit>10</limit>
-    <never_ending>N</never_ending>
-    <interval_in_ms/>
-    <row_time_field/>
-    <last_time_field/>
+    <data>
+      <line>
+        <item>Aston Martin</item>
+        <item>90</item>
+      </line>
+      <line>
+        <item>Ford Falcon</item>
+        <item>70</item>
+      </line>
+      <line>
+        <item>Corvette</item>
+        <item>70</item>
+      </line>
+    </data>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -663,50 +697,8 @@ duplicate fields.</note>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>96</xloc>
-      <yloc>128</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>sv-sel_reorder_duplicate</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>valuename</name>
-      </field>
-      <field>
-        <name>wantField</name>
-      </field>
-      <field>
-        <name>wantField</name>
-        <rename>copy1</rename>
-      </field>
-      <field>
-        <name>wantField</name>
-        <rename>copy2</rename>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>544</xloc>
-      <yloc>128</yloc>
+      <xloc>160</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -715,9 +707,5 @@ duplicate fields.</note>
   <slave-step-copy-partition-distribution>
   </slave-step-copy-partition-distribution>
   <slave_transformation>N</slave_transformation>
-  <attributes>
-    <group>
-      <name>DataService</name>
-    </group>
-  </attributes>
+  <attributes/>
 </transformation>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>ex3_table_input_output</name>
+    <name>tr_scd</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -427,96 +427,73 @@
     </slaveservers>
     <clusterschemas>
     </clusterschemas>
-    <created_user>admin</created_user>
-    <created_date>2014/12/27 16:36:19.039</created_date>
-    <modified_user>admin</modified_user>
-    <modified_date>2014/12/15 10:13:24.576</modified_date>
+    <created_user>-</created_user>
+    <created_date>2016/11/22 16:35:12.168</created_date>
+    <modified_user>-</modified_user>
+    <modified_date>2016/11/22 16:35:12.168</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
     <notepad>
-      <note>Exercise 3 - Part I: Reading &amp; Writing Database Tables</note>
-      <xloc>16</xloc>
-      <yloc>16</yloc>
-      <width>406</width>
-      <heigth>29</heigth>
-      <fontname>Tahoma</fontname>
+      <note>Lab 6: Dimension Lookup / Update (Type II)</note>
+      <xloc>96</xloc>
+      <yloc>32</yloc>
+      <width>276</width>
+      <heigth>28</heigth>
+      <fontname>Segoe UI</fontname>
+      <fontsize>11</fontsize>
+      <fontbold>Y</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>255</backgroundcolorgreen>
+      <backgroundcolorblue>255</backgroundcolorblue>
+      <bordercolorred>255</bordercolorred>
+      <bordercolorgreen>255</bordercolorgreen>
+      <bordercolorblue>255</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>This demonstration illustrates the behaviour of the 2 step modes:
+
+     Dimension Update / Insert - records are updated or inserted into the table (Type I)
+     Dimension Lookup  - current records are llooked up and compared with stream field.  If the record exists in the stream field,
+     but not in the database table, then its held in cache and assigned TK0. (Type I)
+
+     For Type II SCDs the table inserts a record (notes a change in the Stream Datefield), version, updating the records with required
+     date range.</note>
+      <xloc>96</xloc>
+      <yloc>96</yloc>
+      <width>934</width>
+      <heigth>186</heigth>
+      <fontname>Calibri Light</fontname>
       <fontsize>11</fontsize>
       <fontbold>N</fontbold>
       <fontitalic>N</fontitalic>
-      <fontcolorred>255</fontcolorred>
-      <fontcolorgreen>0</fontcolorgreen>
-      <fontcolorblue>0</fontcolorblue>
-      <backgroundcolorred>255</backgroundcolorred>
-      <backgroundcolorgreen>255</backgroundcolorgreen>
-      <backgroundcolorblue>255</backgroundcolorblue>
-      <bordercolorred>100</bordercolorred>
-      <bordercolorgreen>100</bordercolorgreen>
-      <bordercolorblue>100</bordercolorblue>
-      <drawshadow>Y</drawshadow>
-    </notepad>
-    <notepad>
-      <note>ti-orderdetails
-
-A Table Input step configured to
-read the 'orderdetails' table using 
-the 'pentaho_oltp' db connection.</note>
-      <xloc>64</xloc>
-      <yloc>176</yloc>
-      <width>198</width>
-      <heigth>79</heigth>
-      <fontname>Tahoma</fontname>
-      <fontsize>8</fontsize>
-      <fontbold>N</fontbold>
-      <fontitalic>N</fontitalic>
       <fontcolorred>0</fontcolorred>
       <fontcolorgreen>0</fontcolorgreen>
       <fontcolorblue>0</fontcolorblue>
       <backgroundcolorred>255</backgroundcolorred>
       <backgroundcolorgreen>255</backgroundcolorgreen>
       <backgroundcolorblue>255</backgroundcolorblue>
-      <bordercolorred>192</bordercolorred>
-      <bordercolorgreen>192</bordercolorgreen>
-      <bordercolorblue>192</bordercolorblue>
-      <drawshadow>Y</drawshadow>
-    </notepad>
-    <notepad>
-      <note>to-test_orderdetails
-
-A Table Output step configured to
-truncate and then insert data into
-the 'test_orderdetails' table using
-the 'pentaho_olap' db connection.</note>
-      <xloc>384</xloc>
-      <yloc>176</yloc>
-      <width>196</width>
-      <heigth>93</heigth>
-      <fontname>Tahoma</fontname>
-      <fontsize>8</fontsize>
-      <fontbold>N</fontbold>
-      <fontitalic>N</fontitalic>
-      <fontcolorred>0</fontcolorred>
-      <fontcolorgreen>0</fontcolorgreen>
-      <fontcolorblue>0</fontcolorblue>
-      <backgroundcolorred>255</backgroundcolorred>
-      <backgroundcolorgreen>255</backgroundcolorgreen>
-      <backgroundcolorblue>255</backgroundcolorblue>
-      <bordercolorred>192</bordercolorred>
-      <bordercolorgreen>192</bordercolorgreen>
-      <bordercolorblue>192</bordercolorblue>
+      <bordercolorred>255</bordercolorred>
+      <bordercolorgreen>255</bordercolorgreen>
+      <bordercolorblue>255</bordercolorblue>
       <drawshadow>Y</drawshadow>
     </notepad>
   </notepads>
   <connection>
-    <name>pentaho_olap</name>
+    <name>Sampledata</name>
     <server>localhost</server>
-    <type>POSTGRESQL</type>
+    <type>HYPERSONIC</type>
     <access>Native</access>
-    <database>pentaho_olap</database>
-    <port>5432</port>
-    <username>pentaho</username>
-    <password>Encrypted 2be98afc86ad79397b80ea162dac3fd89</password>
+    <database>Sampledata</database>
+    <port>9001</port>
+    <username>pentaho_admin</username>
+    <password>Encrypted 2be98afc86aa7f2e4bb18bd63c99dbdde</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -535,7 +512,7 @@ the 'pentaho_olap' db connection.</note>
       </attribute>
       <attribute>
         <code>PORT_NUMBER</code>
-        <attribute>5432</attribute>
+        <attribute>9001</attribute>
       </attribute>
       <attribute>
         <code>PRESERVE_RESERVED_WORD_CASE</code>
@@ -547,62 +524,11 @@ the 'pentaho_olap' db connection.</note>
       </attribute>
       <attribute>
         <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>USE_POOLING</code>
-        <attribute>N</attribute>
-      </attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>pentaho_oltp</name>
-    <server>localhost</server>
-    <type>POSTGRESQL</type>
-    <access>Native</access>
-    <database>pentaho_oltp</database>
-    <port>5432</port>
-    <username>pentaho</username>
-    <password>Encrypted 2be98afc86ad79397b80ea162dac3fd89</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>IS_CLUSTERED</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>PORT_NUMBER</code>
-        <attribute>5432</attribute>
-      </attribute>
-      <attribute>
-        <code>PRESERVE_RESERVED_WORD_CASE</code>
         <attribute>Y</attribute>
       </attribute>
       <attribute>
-        <code>QUOTE_ALL_FIELDS</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
         <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
-        <attribute>N</attribute>
+        <attribute>Y</attribute>
       </attribute>
       <attribute>
         <code>USE_POOLING</code>
@@ -612,14 +538,19 @@ the 'pentaho_olap' db connection.</note>
   </connection>
   <order>
     <hop>
-      <from>ti-orderdetails</from>
-      <to>to-test_orderdetails</to>
+      <from>Data Grid</from>
+      <to>Get System Info</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Get System Info</from>
+      <to>Dimension lookup/update</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>Table input 3</name>
-    <type>TableInput</type>
+    <name>Data Grid</name>
+    <type>DataGrid</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -628,24 +559,36 @@ the 'pentaho_olap' db connection.</note>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection/>
-    <sql>SELECT
-  ordernumber
-, orderdate
-, requireddate
-, shippeddate
-, status
-, comments
-, customernumber
-FROM orders_basic
-</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cached_row_meta_active>N</cached_row_meta_active>
-    <row-meta/>
+    <fields>
+      <field>
+        <name>id</name>
+        <type>Integer</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>city</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <data>
+      <line>
+        <item>1</item>
+        <item>London</item>
+      </line>
+    </data>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -655,56 +598,14 @@ FROM orders_basic
       </output>
     </remotesteps>
     <GUI>
-      <xloc>160</xloc>
-      <yloc>160</yloc>
-      <draw>N</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>ti-orderdetails</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>pentaho_oltp</connection>
-    <sql>SELECT
-  ordernumber
-, productcode
-, quantityordered
-, priceeach
-, quantityordered * priceeach as total
-, orderlinenumber
-FROM orderdetails
-</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cached_row_meta_active>N</cached_row_meta_active>
-    <row-meta/>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>112</xloc>
-      <yloc>96</yloc>
+      <xloc>128</xloc>
+      <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>to-test_orderdetails</name>
-    <type>TableOutput</type>
+    <name>Dimension lookup/update</name>
+    <type>DimensionLookup</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -713,25 +614,48 @@ FROM orderdetails
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>pentaho_olap</connection>
-    <schema/>
-    <table>test_orderdetails</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>N</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
+    <schema>PUBLIC</schema>
+    <table>DIM_SCD</table>
+    <connection>Sampledata</connection>
+    <commit>100</commit>
+    <update>Y</update>
     <fields>
+      <key>
+        <name>id</name>
+        <lookup>id</lookup>
+      </key>
+      <date>
+        <name>LAST_UPDATE</name>
+        <from>date_from</from>
+        <to>date_to</to>
+      </date>
+      <field>
+        <name>city</name>
+        <lookup>city</lookup>
+        <update>Insert</update>
+      </field>
+      <field>
+        <name>LAST_UPDATE</name>
+        <lookup>LAST_UPDATE</lookup>
+        <update>Update</update>
+      </field>
+      <return>
+        <name>TK</name>
+        <rename/>
+        <creation_method>tablemax</creation_method>
+        <use_autoinc>N</use_autoinc>
+        <version>version</version>
+      </return>
     </fields>
+    <sequence/>
+    <min_year>1900</min_year>
+    <max_year>2199</max_year>
+    <cache_size>-1</cache_size>
+    <preload_cache>N</preload_cache>
+    <use_start_date_alternative>N</use_start_date_alternative>
+    <start_date_alternative>none</start_date_alternative>
+    <start_date_field_name/>
+    <useBatch>N</useBatch>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -742,7 +666,38 @@ FROM orderdetails
     </remotesteps>
     <GUI>
       <xloc>448</xloc>
-      <yloc>96</yloc>
+      <yloc>320</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Get System Info</name>
+    <type>SystemInfo</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>LAST_UPDATE</name>
+        <type>system date (variable)</type>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>288</xloc>
+      <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -751,12 +706,5 @@ FROM orderdetails
   <slave-step-copy-partition-distribution>
   </slave-step-copy-partition-distribution>
   <slave_transformation>N</slave_transformation>
-  <attributes>
-    <group>
-      <name>DataService</name>
-    </group>
-    <group>
-      <name>explorerState</name>
-    </group>
-  </attributes>
+  <attributes/>
 </transformation>

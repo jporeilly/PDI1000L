@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>gd9_preview_sample_size</name>
+    <name>tr_write_database</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -427,45 +427,87 @@
     </slaveservers>
     <clusterschemas>
     </clusterschemas>
-    <created_user>admin</created_user>
-    <created_date>2014/12/27 16:36:25.142</created_date>
-    <modified_user>admin</modified_user>
-    <modified_date>2015/01/05 14:13:19.365</modified_date>
+    <created_user>-</created_user>
+    <created_date>2016/10/27 15:07:33.924</created_date>
+    <modified_user>-</modified_user>
+    <modified_date>2016/10/27 15:07:33.924</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
     <notepad>
-      <note>Guided Demo 9: Choosing Adequate Sample Size for ‘Get Fields’</note>
-      <xloc>16</xloc>
-      <yloc>16</yloc>
-      <width>481</width>
-      <heigth>29</heigth>
-      <fontname>Tahoma</fontname>
+      <note>Lab 2: Write to a Database</note>
+      <xloc>128</xloc>
+      <yloc>64</yloc>
+      <width>196</width>
+      <heigth>30</heigth>
+      <fontname>Segoe UI</fontname>
       <fontsize>11</fontsize>
-      <fontbold>N</fontbold>
+      <fontbold>Y</fontbold>
       <fontitalic>N</fontitalic>
-      <fontcolorred>255</fontcolorred>
+      <fontcolorred>0</fontcolorred>
       <fontcolorgreen>0</fontcolorgreen>
       <fontcolorblue>0</fontcolorblue>
       <backgroundcolorred>255</backgroundcolorred>
       <backgroundcolorgreen>255</backgroundcolorgreen>
       <backgroundcolorblue>255</backgroundcolorblue>
-      <bordercolorred>100</bordercolorred>
-      <bordercolorgreen>100</bordercolorgreen>
-      <bordercolorblue>100</bordercolorblue>
+      <bordercolorred>255</bordercolorred>
+      <bordercolorgreen>255</bordercolorgreen>
+      <bordercolorblue>255</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>Simple transformation that writes the sales_data.csv to a table</note>
+      <xloc>128</xloc>
+      <yloc>112</yloc>
+      <width>334</width>
+      <heigth>26</heigth>
+      <fontname>Calibri Light</fontname>
+      <fontsize>10</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>255</backgroundcolorgreen>
+      <backgroundcolorblue>255</backgroundcolorblue>
+      <bordercolorred>255</bordercolorred>
+      <bordercolorgreen>255</bordercolorgreen>
+      <bordercolorblue>255</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>Required for Merged Rows (diff) Database Lab</note>
+      <xloc>128</xloc>
+      <yloc>352</yloc>
+      <width>253</width>
+      <heigth>26</heigth>
+      <fontname>Segoe UI</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>255</backgroundcolorgreen>
+      <backgroundcolorblue>255</backgroundcolorblue>
+      <bordercolorred>192</bordercolorred>
+      <bordercolorgreen>192</bordercolorgreen>
+      <bordercolorblue>192</bordercolorblue>
       <drawshadow>Y</drawshadow>
     </notepad>
   </notepads>
   <connection>
-    <name>pentaho_olap</name>
+    <name>Sampledata</name>
     <server>localhost</server>
-    <type>POSTGRESQL</type>
+    <type>HYPERSONIC</type>
     <access>Native</access>
-    <database>pentaho_olap</database>
-    <port>5432</port>
-    <username>pentaho</username>
-    <password>Encrypted 2be98afc86ad79397b80ea162dac3fd89</password>
+    <database>sampledata</database>
+    <port>9001</port>
+    <username>pentaho_admin</username>
+    <password>Encrypted 2be98afc86aa7f2e4bb18bd63c99dbdde</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -484,11 +526,11 @@
       </attribute>
       <attribute>
         <code>PORT_NUMBER</code>
-        <attribute>5432</attribute>
+        <attribute>9001</attribute>
       </attribute>
       <attribute>
         <code>PRESERVE_RESERVED_WORD_CASE</code>
-        <attribute>N</attribute>
+        <attribute>Y</attribute>
       </attribute>
       <attribute>
         <code>QUOTE_ALL_FIELDS</code>
@@ -510,13 +552,18 @@
   </connection>
   <order>
     <hop>
-      <from>CSV file input</from>
-      <to>Table output</to>
+      <from>csvi-sales_data</from>
+      <to>to-stg_sales_data</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>tfi-orders</from>
+      <to>to-stg_orders_merged</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>CSV file input</name>
+    <name>csvi-sales_data</name>
     <type>CsvInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -526,11 +573,11 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>C:\Pentaho\design-tools\data-integration\samples\transformations\files\sales_data.csv</filename>
+    <filename>${Internal.Entry.Current.Directory}\sales_data.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
-    <separator>,</separator>
+    <separator>;</separator>
     <enclosure>"</enclosure>
     <header>Y</header>
     <buffer_size>50000</buffer_size>
@@ -545,62 +592,62 @@
         <name>ORDERNUMBER</name>
         <type>Integer</type>
         <format>#</format>
-        <currency>$</currency>
+        <currency>£</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
-        <precision>-1</precision>
+        <precision>0</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>QUANTITYORDERED</name>
         <type>Integer</type>
         <format>#</format>
-        <currency>$</currency>
+        <currency>£</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
-        <precision>-1</precision>
+        <precision>0</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>PRICEEACH</name>
         <type>Number</type>
         <format>#.#</format>
-        <currency>$</currency>
+        <currency>£</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>15</length>
-        <precision>-1</precision>
+        <length>4</length>
+        <precision>1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>ORDERLINENUMBER</name>
         <type>Integer</type>
         <format>#</format>
-        <currency>$</currency>
+        <currency>£</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
-        <precision>-1</precision>
+        <precision>0</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>SALES</name>
         <type>Number</type>
         <format>#.#</format>
-        <currency>$</currency>
+        <currency>£</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>15</length>
-        <precision>-1</precision>
+        <length>7</length>
+        <precision>1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>ORDERDATE</name>
         <type>Date</type>
         <format>MM/dd/yyyy</format>
-        <currency>$</currency>
+        <currency>£</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>-1</length>
@@ -611,7 +658,7 @@
         <name>STATUS</name>
         <type>String</type>
         <format/>
-        <currency>$</currency>
+        <currency>£</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>10</length>
@@ -622,43 +669,43 @@
         <name>QTR_ID</name>
         <type>Integer</type>
         <format>#</format>
-        <currency>$</currency>
+        <currency>£</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
-        <precision>-1</precision>
+        <precision>0</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>MONTH_ID</name>
         <type>Integer</type>
         <format>#</format>
-        <currency>$</currency>
+        <currency>£</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
-        <precision>-1</precision>
+        <precision>0</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>YEAR_ID</name>
         <type>Integer</type>
         <format>#</format>
-        <currency>$</currency>
+        <currency>£</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
-        <precision>-1</precision>
+        <precision>0</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>PRODUCTLINE</name>
         <type>String</type>
         <format/>
-        <currency>$</currency>
+        <currency>£</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>12</length>
+        <length>20</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -666,18 +713,18 @@
         <name>MSRP</name>
         <type>Integer</type>
         <format>#</format>
-        <currency>$</currency>
+        <currency>£</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
-        <precision>-1</precision>
+        <precision>0</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>PRODUCTCODE</name>
         <type>String</type>
         <format/>
-        <currency>$</currency>
+        <currency>£</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>8</length>
@@ -688,7 +735,7 @@
         <name>CUSTOMERNAME</name>
         <type>String</type>
         <format/>
-        <currency>$</currency>
+        <currency>£</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>30</length>
@@ -699,7 +746,7 @@
         <name>PHONE</name>
         <type>String</type>
         <format/>
-        <currency>$</currency>
+        <currency>£</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>16</length>
@@ -710,7 +757,7 @@
         <name>ADDRESSLINE1</name>
         <type>String</type>
         <format/>
-        <currency>$</currency>
+        <currency>£</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>40</length>
@@ -721,7 +768,7 @@
         <name>ADDRESSLINE2</name>
         <type>String</type>
         <format/>
-        <currency>$</currency>
+        <currency>£</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>9</length>
@@ -732,7 +779,7 @@
         <name>CITY</name>
         <type>String</type>
         <format/>
-        <currency>$</currency>
+        <currency>£</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>14</length>
@@ -743,7 +790,7 @@
         <name>STATE</name>
         <type>String</type>
         <format/>
-        <currency>$</currency>
+        <currency>£</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>10</length>
@@ -754,7 +801,7 @@
         <name>POSTALCODE</name>
         <type>String</type>
         <format/>
-        <currency>$</currency>
+        <currency>£</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>8</length>
@@ -765,7 +812,7 @@
         <name>COUNTRY</name>
         <type>String</type>
         <format/>
-        <currency>$</currency>
+        <currency>£</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>13</length>
@@ -776,7 +823,7 @@
         <name>TERRITORY</name>
         <type>String</type>
         <format/>
-        <currency>$</currency>
+        <currency>£</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>5</length>
@@ -787,7 +834,7 @@
         <name>CONTACTLASTNAME</name>
         <type>String</type>
         <format/>
-        <currency>$</currency>
+        <currency>£</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>10</length>
@@ -798,7 +845,7 @@
         <name>CONTACTFIRSTNAME</name>
         <type>String</type>
         <format/>
-        <currency>$</currency>
+        <currency>£</currency>
         <decimal>.</decimal>
         <group>,</group>
         <length>9</length>
@@ -815,14 +862,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>100</xloc>
-      <yloc>120</yloc>
+      <xloc>128</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Table input 3</name>
-    <type>TableInput</type>
+    <name>tfi-orders</name>
+    <type>TextFileInput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -831,24 +878,161 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection/>
-    <sql>SELECT
-  ordernumber
-, orderdate
-, requireddate
-, shippeddate
-, status
-, comments
-, customernumber
-FROM orders_basic
-</sql>
+    <accept_filenames>N</accept_filenames>
+    <passing_through_fields>N</passing_through_fields>
+    <accept_field/>
+    <accept_stepname/>
+    <separator>;</separator>
+    <enclosure>"</enclosure>
+    <enclosure_breaks>N</enclosure_breaks>
+    <escapechar/>
+    <header>Y</header>
+    <nr_headerlines>1</nr_headerlines>
+    <footer>N</footer>
+    <nr_footerlines>1</nr_footerlines>
+    <line_wrapped>N</line_wrapped>
+    <nr_wraps>1</nr_wraps>
+    <layout_paged>N</layout_paged>
+    <nr_lines_per_page>80</nr_lines_per_page>
+    <nr_lines_doc_header>0</nr_lines_doc_header>
+    <noempty>Y</noempty>
+    <include>N</include>
+    <include_field/>
+    <rownum>N</rownum>
+    <rownumByFile>N</rownumByFile>
+    <rownum_field/>
+    <format>mixed</format>
+    <encoding/>
+    <length>Characters</length>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <file>
+      <name>${Internal.Entry.Current.Directory}\orders.txt</name>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <type>CSV</type>
+      <compression>None</compression>
+    </file>
+    <filters>
+    </filters>
+    <fields>
+      <field>
+        <name>PRODUCTCODE</name>
+        <type>String</type>
+        <format/>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>8</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>PRODUCTNAME</name>
+        <type>String</type>
+        <format/>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>36</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>PRODUCTLINE</name>
+        <type>String</type>
+        <format/>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>16</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>PRODUCTSCALE</name>
+        <type>String</type>
+        <format/>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>4</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>PRODUCTVENDOR</name>
+        <type>String</type>
+        <format/>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>25</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>PRODUCTDESCRIPTION</name>
+        <type>String</type>
+        <format/>
+        <currency>£</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>390</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+    </fields>
     <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cached_row_meta_active>N</cached_row_meta_active>
-    <row-meta/>
+    <error_ignored>N</error_ignored>
+    <skip_bad_files>N</skip_bad_files>
+    <file_error_field/>
+    <file_error_message_field/>
+    <error_line_skipped>N</error_line_skipped>
+    <error_count_field/>
+    <error_fields_field/>
+    <error_text_field/>
+    <bad_line_files_destination_directory/>
+    <bad_line_files_extension>warning</bad_line_files_extension>
+    <error_line_files_destination_directory/>
+    <error_line_files_extension>error</error_line_files_extension>
+    <line_number_files_destination_directory/>
+    <line_number_files_extension>line</line_number_files_extension>
+    <date_format_lenient>Y</date_format_lenient>
+    <date_format_locale>en_GB</date_format_locale>
+    <shortFileFieldName/>
+    <pathFieldName/>
+    <hiddenFieldName/>
+    <lastModificationTimeFieldName/>
+    <uriNameFieldName/>
+    <rootUriNameFieldName/>
+    <extensionFieldName/>
+    <sizeFieldName/>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -858,13 +1042,13 @@ FROM orders_basic
       </output>
     </remotesteps>
     <GUI>
-      <xloc>180</xloc>
-      <yloc>200</yloc>
-      <draw>N</draw>
+      <xloc>128</xloc>
+      <yloc>272</yloc>
+      <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Table output</name>
+    <name>to-stg_orders_merged</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -874,14 +1058,14 @@ FROM orders_basic
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>pentaho_olap</connection>
-    <schema/>
-    <table>SampleSizeTest</table>
+    <connection>Sampledata</connection>
+    <schema>PUBLIC</schema>
+    <table>STG_ORDERS_MERGED</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>Y</use_batch>
-    <specify_fields>N</specify_fields>
+    <specify_fields>Y</specify_fields>
     <partitioning_enabled>N</partitioning_enabled>
     <partitioning_field/>
     <partitioning_daily>N</partitioning_daily>
@@ -902,8 +1086,148 @@ FROM orders_basic
       </output>
     </remotesteps>
     <GUI>
-      <xloc>340</xloc>
-      <yloc>120</yloc>
+      <xloc>368</xloc>
+      <yloc>272</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>to-stg_sales_data</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>Sampledata</connection>
+    <schema>PUBLIC</schema>
+    <table>STG_SALES_DATA</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>N</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>ORDERNUMBER</column_name>
+        <stream_name>ORDERNUMBER</stream_name>
+      </field>
+      <field>
+        <column_name>QUANTITYORDERED</column_name>
+        <stream_name>QUANTITYORDERED</stream_name>
+      </field>
+      <field>
+        <column_name>PRICEEACH</column_name>
+        <stream_name>PRICEEACH</stream_name>
+      </field>
+      <field>
+        <column_name>ORDERLINENUMBER</column_name>
+        <stream_name>ORDERLINENUMBER</stream_name>
+      </field>
+      <field>
+        <column_name>SALES</column_name>
+        <stream_name>SALES</stream_name>
+      </field>
+      <field>
+        <column_name>ORDERDATE</column_name>
+        <stream_name>ORDERDATE</stream_name>
+      </field>
+      <field>
+        <column_name>STATUS</column_name>
+        <stream_name>STATUS</stream_name>
+      </field>
+      <field>
+        <column_name>QTR_ID</column_name>
+        <stream_name>QTR_ID</stream_name>
+      </field>
+      <field>
+        <column_name>MONTH_ID</column_name>
+        <stream_name>MONTH_ID</stream_name>
+      </field>
+      <field>
+        <column_name>YEAR_ID</column_name>
+        <stream_name>YEAR_ID</stream_name>
+      </field>
+      <field>
+        <column_name>PRODUCTLINE</column_name>
+        <stream_name>PRODUCTLINE</stream_name>
+      </field>
+      <field>
+        <column_name>MSRP</column_name>
+        <stream_name>MSRP</stream_name>
+      </field>
+      <field>
+        <column_name>PRODUCTCODE</column_name>
+        <stream_name>PRODUCTCODE</stream_name>
+      </field>
+      <field>
+        <column_name>CUSTOMERNAME</column_name>
+        <stream_name>CUSTOMERNAME</stream_name>
+      </field>
+      <field>
+        <column_name>PHONE</column_name>
+        <stream_name>PHONE</stream_name>
+      </field>
+      <field>
+        <column_name>ADDRESSLINE1</column_name>
+        <stream_name>ADDRESSLINE1</stream_name>
+      </field>
+      <field>
+        <column_name>ADDRESSLINE2</column_name>
+        <stream_name>ADDRESSLINE2</stream_name>
+      </field>
+      <field>
+        <column_name>CITY</column_name>
+        <stream_name>CITY</stream_name>
+      </field>
+      <field>
+        <column_name>STATE</column_name>
+        <stream_name>STATE</stream_name>
+      </field>
+      <field>
+        <column_name>POSTALCODE</column_name>
+        <stream_name>POSTALCODE</stream_name>
+      </field>
+      <field>
+        <column_name>COUNTRY</column_name>
+        <stream_name>COUNTRY</stream_name>
+      </field>
+      <field>
+        <column_name>TERRITORY</column_name>
+        <stream_name>TERRITORY</stream_name>
+      </field>
+      <field>
+        <column_name>CONTACTLASTNAME</column_name>
+        <stream_name>CONTACTLASTNAME</stream_name>
+      </field>
+      <field>
+        <column_name>CONTACTFIRSTNAME</column_name>
+        <stream_name>CONTACTFIRSTNAME</stream_name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>368</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -914,7 +1238,23 @@ FROM orders_basic
   <slave_transformation>N</slave_transformation>
   <attributes>
     <group>
-      <name>DataService</name>
+      <name>explorerState</name>
+      <attribute>
+        <key>to-stg_sales_data</key>
+        <value/>
+      </attribute>
+      <attribute>
+        <key>to-stg_orders_merged</key>
+        <value/>
+      </attribute>
+      <attribute>
+        <key>tfi-orders</key>
+        <value/>
+      </attribute>
+      <attribute>
+        <key>csvi-sales_data</key>
+        <value/>
+      </attribute>
     </group>
   </attributes>
 </transformation>
