@@ -608,7 +608,15 @@
       <nr>0</nr>
       <xloc>192</xloc>
       <yloc>144</yloc>
-      <attributes_kjc/>
+      <attributes_kjc>
+        <group>
+          <name>JobRestart</name>
+          <attribute>
+            <key>CheckpointMark</key>
+            <value>N</value>
+          </attribute>
+        </group>
+      </attributes_kjc>
     </entry>
     <entry>
       <name>wtl-source_file_found</name>

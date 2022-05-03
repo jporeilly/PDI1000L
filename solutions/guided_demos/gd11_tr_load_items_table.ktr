@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>tr_employee_insert_update</name>
+    <name>gd11_tr_load_items_table</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -9,6 +9,21 @@
     <trans_status>0</trans_status>
     <directory>/</directory>
     <parameters>
+      <parameter>
+        <name>delimiter</name>
+        <default_value/>
+        <description>The input file’s delimiter.</description>
+      </parameter>
+      <parameter>
+        <name>input_file</name>
+        <default_value/>
+        <description>The input file’s path and file name.</description>
+      </parameter>
+      <parameter>
+        <name>table_name</name>
+        <default_value/>
+        <description>The target table’s name.</description>
+      </parameter>
     </parameters>
     <log>
       <trans-log-table>
@@ -428,91 +443,113 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2010/09/11 15:18:45.703</created_date>
-    <modified_user>-</modified_user>
-    <modified_date>2010/09/11 15:18:45.703</modified_date>
+    <created_date>2018/08/20 15:05:31.722</created_date>
+    <modified_user>admin</modified_user>
+    <modified_date>2019/10/04 09:39:51.494</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
     <notepad>
-      <note>Lab 4: Employee Insert / Update</note>
-      <xloc>144</xloc>
-      <yloc>32</yloc>
-      <width>236</width>
+      <note>Read CSV file
+containing items</note>
+      <xloc>32</xloc>
+      <yloc>192</yloc>
+      <width>119</width>
+      <heigth>44</heigth>
+      <fontname>Tahoma</fontname>
+      <fontsize>10</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>255</backgroundcolorgreen>
+      <backgroundcolorblue>255</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>Insert items
+into table</note>
+      <xloc>304</xloc>
+      <yloc>192</yloc>
+      <width>88</width>
+      <heigth>44</heigth>
+      <fontname>Tahoma</fontname>
+      <fontsize>10</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>255</backgroundcolorgreen>
+      <backgroundcolorblue>255</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>Guided Demo 11: Onboarding Data (Transformation)</note>
+      <xloc>16</xloc>
+      <yloc>16</yloc>
+      <width>430</width>
       <heigth>30</heigth>
-      <fontname>Segoe UI</fontname>
-      <fontsize>11</fontsize>
-      <fontbold>Y</fontbold>
+      <fontname>Tahoma</fontname>
+      <fontsize>12</fontsize>
+      <fontbold>N</fontbold>
       <fontitalic>N</fontitalic>
-      <fontcolorred>0</fontcolorred>
+      <fontcolorred>255</fontcolorred>
       <fontcolorgreen>0</fontcolorgreen>
       <fontcolorblue>0</fontcolorblue>
       <backgroundcolorred>255</backgroundcolorred>
       <backgroundcolorgreen>255</backgroundcolorgreen>
       <backgroundcolorblue>255</backgroundcolorblue>
-      <bordercolorred>255</bordercolorred>
-      <bordercolorgreen>255</bordercolorgreen>
-      <bordercolorblue>255</bordercolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
       <drawshadow>Y</drawshadow>
     </notepad>
     <notepad>
-      <note>In this demonstration the EMPLOYEE table is updated and new records are inserted.  
+      <note>To run successfully:
 
-    Inspect the EMPLOYEE Table and compare the records against the employee.txt</note>
-      <xloc>144</xloc>
-      <yloc>80</yloc>
-      <width>617</width>
-      <heigth>76</heigth>
-      <fontname>Calibri Light</fontname>
-      <fontsize>11</fontsize>
+- File path and file must exist
+- Target table must exist
+- Parameters must be correctly set before running</note>
+      <xloc>32</xloc>
+      <yloc>288</yloc>
+      <width>280</width>
+      <heigth>79</heigth>
+      <fontname>Tahoma</fontname>
+      <fontsize>8</fontsize>
       <fontbold>N</fontbold>
       <fontitalic>N</fontitalic>
       <fontcolorred>0</fontcolorred>
       <fontcolorgreen>0</fontcolorgreen>
-      <fontcolorblue>0</fontcolorblue>
+      <fontcolorblue>255</fontcolorblue>
       <backgroundcolorred>255</backgroundcolorred>
       <backgroundcolorgreen>255</backgroundcolorgreen>
       <backgroundcolorblue>255</backgroundcolorblue>
-      <bordercolorred>255</bordercolorred>
-      <bordercolorgreen>255</bordercolorgreen>
-      <bordercolorblue>255</bordercolorblue>
-      <drawshadow>Y</drawshadow>
-    </notepad>
-    <notepad>
-      <note>The stream fields are mapped to the database table by ensuring:
-EMPLOYEE_NUMBER = EMPLOYEENUMBER
-
-Ensure all the Field mappings are correct</note>
-      <xloc>160</xloc>
-      <yloc>272</yloc>
-      <width>346</width>
-      <heigth>73</heigth>
-      <fontname>Segoe UI</fontname>
-      <fontsize>9</fontsize>
-      <fontbold>N</fontbold>
-      <fontitalic>N</fontitalic>
-      <fontcolorred>0</fontcolorred>
-      <fontcolorgreen>0</fontcolorgreen>
-      <fontcolorblue>0</fontcolorblue>
-      <backgroundcolorred>255</backgroundcolorred>
-      <backgroundcolorgreen>255</backgroundcolorgreen>
-      <backgroundcolorblue>255</backgroundcolorblue>
-      <bordercolorred>192</bordercolorred>
-      <bordercolorgreen>192</bordercolorgreen>
-      <bordercolorblue>192</bordercolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
       <drawshadow>Y</drawshadow>
     </notepad>
   </notepads>
   <connection>
-    <name>Sampledata</name>
+    <name>live_logging_info</name>
     <server>localhost</server>
-    <type>HYPERSONIC</type>
-    <access>Native</access>
-    <database>Sampledata</database>
-    <port>9001</port>
-    <username>pentaho_admin</username>
-    <password>Encrypted 2be98afc86aa7f2e4bb18bd63c99dbdde</password>
+    <type>POSTGRESQL</type>
+    <access>JNDI</access>
+    <database>live_logging_info</database>
+    <port>5432</port>
+    <username/>
+    <password>Encrypted </password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -531,11 +568,11 @@ Ensure all the Field mappings are correct</note>
       </attribute>
       <attribute>
         <code>PORT_NUMBER</code>
-        <attribute>9001</attribute>
+        <attribute>5432</attribute>
       </attribute>
       <attribute>
         <code>PRESERVE_RESERVED_WORD_CASE</code>
-        <attribute>N</attribute>
+        <attribute>Y</attribute>
       </attribute>
       <attribute>
         <code>QUOTE_ALL_FIELDS</code>
@@ -543,11 +580,62 @@ Ensure all the Field mappings are correct</note>
       </attribute>
       <attribute>
         <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
-        <attribute>Y</attribute>
+        <attribute>N</attribute>
       </attribute>
       <attribute>
         <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>pentaho_oltp</name>
+    <server>localhost</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>pentaho_oltp</database>
+    <port>5432</port>
+    <username>pentaho</username>
+    <password>Encrypted 2be98afc86ad79397b80ea162dac3fd89</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>5432</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
         <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>N</attribute>
       </attribute>
       <attribute>
         <code>USE_POOLING</code>
@@ -557,14 +645,14 @@ Ensure all the Field mappings are correct</note>
   </connection>
   <order>
     <hop>
-      <from>tfi-employess_update_insert</from>
-      <to>Insert / Update Employees</to>
+      <from>csvi-items</from>
+      <to>to-items</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>Insert / Update Employees</name>
-    <type>InsertUpdate</type>
+    <name>csvi-items</name>
+    <type>CsvInput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -573,59 +661,88 @@ Ensure all the Field mappings are correct</note>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>Sampledata</connection>
-    <commit>100</commit>
-    <update_bypassed>N</update_bypassed>
-    <lookup>
-      <schema/>
-      <table>EMPLOYEES</table>
-      <key>
-        <name>EMPLOYEE_NUMBER</name>
-        <field>EMPLOYEENUMBER</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>LASTNAME</name>
-        <rename>LASTNAME</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>FIRSTNAME</name>
-        <rename>FIRSTNAME</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>EXTENSION</name>
-        <rename>EXT</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>EMAIL</name>
-        <rename>EMAIL</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>EMPLOYEENUMBER</name>
-        <rename>EMPLOYEE_NUMBER</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>OFFICECODE</name>
-        <rename>OFFICE</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>REPORTSTO</name>
-        <rename>REPORTS</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>JOBTITLE</name>
-        <rename>TITLE</rename>
-        <update>Y</update>
-      </value>
-    </lookup>
+    <filename>${input_file}</filename>
+    <filename_field/>
+    <rownum_field/>
+    <include_filename>N</include_filename>
+    <separator>${delimiter}</separator>
+    <enclosure>"</enclosure>
+    <header>Y</header>
+    <buffer_size>50000</buffer_size>
+    <lazy_conversion>N</lazy_conversion>
+    <add_filename_result>N</add_filename_result>
+    <parallel>N</parallel>
+    <newline_possible>N</newline_possible>
+    <format/>
+    <encoding/>
+    <fields>
+      <field>
+        <name>item_id</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>status_id</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>serial_number</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>warehouse_location_id</name>
+        <type>Integer</type>
+        <format>#</format>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>exp_dt</name>
+        <type>Date</type>
+        <format>yyyy-MM-dd HH:mm:ss</format>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>value</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency>$</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>5</length>
+        <precision>2</precision>
+        <trim_type>none</trim_type>
+      </field>
+    </fields>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -635,14 +752,14 @@ Ensure all the Field mappings are correct</note>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>416</xloc>
-      <yloc>192</yloc>
+      <xloc>64</xloc>
+      <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>tfi-employess_update_insert</name>
-    <type>TextFileInput</type>
+    <name>to-items</name>
+    <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -651,191 +768,49 @@ Ensure all the Field mappings are correct</note>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <accept_filenames>N</accept_filenames>
-    <passing_through_fields>N</passing_through_fields>
-    <accept_field/>
-    <accept_stepname/>
-    <separator>,</separator>
-    <enclosure>"</enclosure>
-    <enclosure_breaks>N</enclosure_breaks>
-    <escapechar/>
-    <header>Y</header>
-    <nr_headerlines>1</nr_headerlines>
-    <footer>N</footer>
-    <nr_footerlines>1</nr_footerlines>
-    <line_wrapped>N</line_wrapped>
-    <nr_wraps>1</nr_wraps>
-    <layout_paged>N</layout_paged>
-    <nr_lines_per_page>80</nr_lines_per_page>
-    <nr_lines_doc_header>0</nr_lines_doc_header>
-    <noempty>Y</noempty>
-    <include>N</include>
-    <include_field/>
-    <rownum>N</rownum>
-    <rownumByFile>N</rownumByFile>
-    <rownum_field/>
-    <format>mixed</format>
-    <encoding/>
-    <length>Characters</length>
-    <add_to_result_filenames>Y</add_to_result_filenames>
-    <file>
-      <name>${Internal.Entry.Current.Directory}\employees_insert_update.txt</name>
-      <filemask/>
-      <exclude_filemask/>
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-      <type>CSV</type>
-      <compression>None</compression>
-    </file>
-    <filters>
-    </filters>
+    <connection>pentaho_oltp</connection>
+    <schema/>
+    <table>${table_name}</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
     <fields>
       <field>
-        <name>EMPLOYEE_NUMBER</name>
-        <type>Integer</type>
-        <format>#</format>
-        <currency>£</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif>-</nullif>
-        <ifnull/>
-        <position>-1</position>
-        <length>15</length>
-        <precision>0</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
+        <column_name>item_id</column_name>
+        <stream_name>item_id</stream_name>
       </field>
       <field>
-        <name>LASTNAME</name>
-        <type>String</type>
-        <format/>
-        <currency>£</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif>-</nullif>
-        <ifnull/>
-        <position>-1</position>
-        <length>8</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
+        <column_name>status_id</column_name>
+        <stream_name>status_id</stream_name>
       </field>
       <field>
-        <name>FIRSTNAME</name>
-        <type>String</type>
-        <format/>
-        <currency>£</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif>-</nullif>
-        <ifnull/>
-        <position>-1</position>
-        <length>5</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
+        <column_name>serial_number</column_name>
+        <stream_name>serial_number</stream_name>
       </field>
       <field>
-        <name>EXT</name>
-        <type>String</type>
-        <format/>
-        <currency>£</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif>-</nullif>
-        <ifnull/>
-        <position>-1</position>
-        <length>5</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
+        <column_name>warehouse_location_id</column_name>
+        <stream_name>warehouse_location_id</stream_name>
       </field>
       <field>
-        <name>EMAIL</name>
-        <type>String</type>
-        <format/>
-        <currency>£</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif>-</nullif>
-        <ifnull/>
-        <position>-1</position>
-        <length>30</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
+        <column_name>expiration_date</column_name>
+        <stream_name>exp_dt</stream_name>
       </field>
       <field>
-        <name>OFFICE</name>
-        <type>Integer</type>
-        <format>#</format>
-        <currency>£</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif>-</nullif>
-        <ifnull/>
-        <position>-1</position>
-        <length>15</length>
-        <precision>0</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>REPORTS</name>
-        <type>Integer</type>
-        <format>#</format>
-        <currency>£</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif>-</nullif>
-        <ifnull/>
-        <position>-1</position>
-        <length>15</length>
-        <precision>0</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>TITLE</name>
-        <type>String</type>
-        <format/>
-        <currency>£</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif>-</nullif>
-        <ifnull/>
-        <position>-1</position>
-        <length>13</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
+        <column_name>total_value</column_name>
+        <stream_name>value</stream_name>
       </field>
     </fields>
-    <limit>0</limit>
-    <error_ignored>N</error_ignored>
-    <skip_bad_files>N</skip_bad_files>
-    <file_error_field/>
-    <file_error_message_field/>
-    <error_line_skipped>N</error_line_skipped>
-    <error_count_field/>
-    <error_fields_field/>
-    <error_text_field/>
-    <bad_line_files_destination_directory/>
-    <bad_line_files_extension>warning</bad_line_files_extension>
-    <error_line_files_destination_directory/>
-    <error_line_files_extension>error</error_line_files_extension>
-    <line_number_files_destination_directory/>
-    <line_number_files_extension>line</line_number_files_extension>
-    <date_format_lenient>Y</date_format_lenient>
-    <date_format_locale>en_US</date_format_locale>
-    <shortFileFieldName/>
-    <pathFieldName/>
-    <hiddenFieldName/>
-    <lastModificationTimeFieldName/>
-    <uriNameFieldName/>
-    <rootUriNameFieldName/>
-    <extensionFieldName/>
-    <sizeFieldName/>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -845,8 +820,8 @@ Ensure all the Field mappings are correct</note>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>224</xloc>
-      <yloc>192</yloc>
+      <xloc>336</xloc>
+      <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -855,13 +830,5 @@ Ensure all the Field mappings are correct</note>
   <slave-step-copy-partition-distribution>
   </slave-step-copy-partition-distribution>
   <slave_transformation>N</slave_transformation>
-  <attributes>
-    <group>
-      <name>explorerState</name>
-      <attribute>
-        <key>tfi-employess_update_insert</key>
-        <value/>
-      </attribute>
-    </group>
-  </attributes>
+  <attributes/>
 </transformation>

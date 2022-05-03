@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>tr_hello_world</name>
-    <description>Hello World Transformation</description>
-    <extended_description>This transformation generates 10 rows with the message Hello World. 
-</extended_description>
-    <trans_version>1.0</trans_version>
+    <name>ex5_helloworld_parallel_processing_5copies</name>
+    <description/>
+    <extended_description>This transformation generates 15 rows with 1 column (String) with the value "Hello,World!
+
+Modified for EX5 Parallel Processing</extended_description>
+    <trans_version/>
     <trans_type>Normal</trans_type>
-    <trans_status>2</trans_status>
+    <trans_status>0</trans_status>
     <directory>/</directory>
     <parameters>
     </parameters>
@@ -428,78 +429,89 @@
     </slaveservers>
     <clusterschemas>
     </clusterschemas>
-    <created_user>-</created_user>
-    <created_date>2016/04/05 09:07:21.621</created_date>
-    <modified_user>-</modified_user>
-    <modified_date>2016/04/05 09:07:21.621</modified_date>
+    <created_user>admin</created_user>
+    <created_date>2014/12/27 16:36:20.128</created_date>
+    <modified_user>admin</modified_user>
+    <modified_date>2015/01/05 13:54:48.290</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
     <notepad>
-      <note>This transformation generates rows, 'hello world'.  Illustrates some of the key features:
-  
-Step1: Generate Rows
-   Limit: 10 rows
-
-   Name: message     
-   Type: String     
-   Value: hello world        
-
-  click: Preview 
-
-Step2: Dummy
-</note>
-      <xloc>96</xloc>
-      <yloc>64</yloc>
-      <width>625</width>
-      <heigth>296</heigth>
-      <fontname>Calibri Light</fontname>
+      <note>Exercise 5 - Part I: Parallel Processing (Step Copies)</note>
+      <xloc>16</xloc>
+      <yloc>16</yloc>
+      <width>390</width>
+      <heigth>29</heigth>
+      <fontname>Tahoma</fontname>
       <fontsize>11</fontsize>
       <fontbold>N</fontbold>
       <fontitalic>N</fontitalic>
-      <fontcolorred>0</fontcolorred>
+      <fontcolorred>255</fontcolorred>
       <fontcolorgreen>0</fontcolorgreen>
       <fontcolorblue>0</fontcolorblue>
       <backgroundcolorred>255</backgroundcolorred>
       <backgroundcolorgreen>255</backgroundcolorgreen>
       <backgroundcolorblue>255</backgroundcolorblue>
-      <bordercolorred>255</bordercolorred>
-      <bordercolorgreen>255</bordercolorgreen>
-      <bordercolorblue>255</bordercolorblue>
-      <drawshadow>Y</drawshadow>
-    </notepad>
-    <notepad>
-      <note>Lab1: Hello World</note>
-      <xloc>96</xloc>
-      <yloc>16</yloc>
-      <width>136</width>
-      <heigth>30</heigth>
-      <fontname>Segoe UI</fontname>
-      <fontsize>11</fontsize>
-      <fontbold>Y</fontbold>
-      <fontitalic>N</fontitalic>
-      <fontcolorred>0</fontcolorred>
-      <fontcolorgreen>0</fontcolorgreen>
-      <fontcolorblue>0</fontcolorblue>
-      <backgroundcolorred>255</backgroundcolorred>
-      <backgroundcolorgreen>255</backgroundcolorgreen>
-      <backgroundcolorblue>255</backgroundcolorblue>
-      <bordercolorred>255</bordercolorred>
-      <bordercolorgreen>255</bordercolorgreen>
-      <bordercolorblue>255</bordercolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
       <drawshadow>Y</drawshadow>
     </notepad>
   </notepads>
   <order>
     <hop>
-      <from>gr-hello_world</from>
-      <to>dmmy-nothing</to>
+      <from>Create 1 million rows</from>
+      <to>Dummy (do nothing)</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>dmmy-nothing</name>
+    <name>Create 1 million rows</name>
+    <type>RowGenerator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>5</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>Greeting Message</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>Hello, World!</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <limit>1000000</limit>
+    <never_ending>N</never_ending>
+    <interval_in_ms>5000</interval_in_ms>
+    <row_time_field>now</row_time_field>
+    <last_time_field>FiveSecondsAgo</last_time_field>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>64</xloc>
+      <yloc>96</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Dummy (do nothing)</name>
     <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
@@ -518,14 +530,14 @@ Step2: Dummy
       </output>
     </remotesteps>
     <GUI>
-      <xloc>304</xloc>
-      <yloc>240</yloc>
+      <xloc>288</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>gr-hello_world</name>
-    <type>RowGenerator</type>
+    <name>Table input 3</name>
+    <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -534,25 +546,24 @@ Step2: Dummy
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <fields>
-      <field>
-        <name>message</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif>hello world</nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-    </fields>
-    <limit>10</limit>
-    <never_ending>N</never_ending>
-    <interval_in_ms>5000</interval_in_ms>
-    <row_time_field>now</row_time_field>
-    <last_time_field>FiveSecondsAgo</last_time_field>
+    <connection/>
+    <sql>SELECT
+  ordernumber
+, orderdate
+, requireddate
+, shippeddate
+, status
+, comments
+, customernumber
+FROM orders_basic
+</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cached_row_meta_active>N</cached_row_meta_active>
+    <row-meta/>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -562,9 +573,9 @@ Step2: Dummy
       </output>
     </remotesteps>
     <GUI>
-      <xloc>304</xloc>
-      <yloc>112</yloc>
-      <draw>Y</draw>
+      <xloc>180</xloc>
+      <yloc>200</yloc>
+      <draw>N</draw>
     </GUI>
   </step>
   <step_error_handling>
@@ -574,15 +585,7 @@ Step2: Dummy
   <slave_transformation>N</slave_transformation>
   <attributes>
     <group>
-      <name>explorerState</name>
-      <attribute>
-        <key>gr-hello_world</key>
-        <value/>
-      </attribute>
-      <attribute>
-        <key>dmmy-nothing</key>
-        <value/>
-      </attribute>
+      <name>DataService</name>
     </group>
   </attributes>
 </transformation>

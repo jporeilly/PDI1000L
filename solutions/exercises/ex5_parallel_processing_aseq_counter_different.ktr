@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>tr_mjv</name>
-    <description>Modified JavaScript Value</description>
+    <name>ex5_parallel_processing_aseq_counter_different</name>
+    <description/>
     <extended_description/>
-    <trans_version>1.0</trans_version>
+    <trans_version/>
     <trans_type>Normal</trans_type>
-    <trans_status>2</trans_status>
+    <trans_status>0</trans_status>
     <directory>/</directory>
     <parameters>
     </parameters>
@@ -427,88 +427,155 @@
     </slaveservers>
     <clusterschemas>
     </clusterschemas>
-    <created_user>admin</created_user>
-    <created_date>2016/06/08 12:14:24.555</created_date>
+    <created_user>-</created_user>
+    <created_date>2015/01/05 14:00:16.783</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017/04/13 20:32:16.406</modified_date>
+    <modified_date>2015/01/05 14:08:20.508</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
     <notepad>
-      <note>Replace some characters in a string</note>
-      <xloc>288</xloc>
-      <yloc>288</yloc>
-      <width>243</width>
-      <heigth>30</heigth>
-      <fontname>Segoe UI</fontname>
-      <fontsize>9</fontsize>
-      <fontbold>N</fontbold>
-      <fontitalic>N</fontitalic>
-      <fontcolorred>0</fontcolorred>
-      <fontcolorgreen>0</fontcolorgreen>
-      <fontcolorblue>0</fontcolorblue>
-      <backgroundcolorred>255</backgroundcolorred>
-      <backgroundcolorgreen>255</backgroundcolorgreen>
-      <backgroundcolorblue>255</backgroundcolorblue>
-      <bordercolorred>192</bordercolorred>
-      <bordercolorgreen>192</bordercolorgreen>
-      <bordercolorblue>192</bordercolorblue>
-      <drawshadow>Y</drawshadow>
-    </notepad>
-    <notepad>
-      <note>Lab 2: Modified JavaScript Value</note>
-      <xloc>160</xloc>
-      <yloc>32</yloc>
-      <width>237</width>
-      <heigth>30</heigth>
-      <fontname>Segoe UI</fontname>
-      <fontsize>11</fontsize>
-      <fontbold>Y</fontbold>
-      <fontitalic>N</fontitalic>
-      <fontcolorred>0</fontcolorred>
-      <fontcolorgreen>0</fontcolorgreen>
-      <fontcolorblue>0</fontcolorblue>
-      <backgroundcolorred>255</backgroundcolorred>
-      <backgroundcolorgreen>255</backgroundcolorgreen>
-      <backgroundcolorblue>255</backgroundcolorblue>
-      <bordercolorred>255</bordercolorred>
-      <bordercolorgreen>255</bordercolorgreen>
-      <bordercolorblue>255</bordercolorblue>
-      <drawshadow>Y</drawshadow>
-    </notepad>
-    <notepad>
-      <note>The demonstration illustrates the replace function to replace some
-characters in the field and fieldsame, stream fields.</note>
-      <xloc>176</xloc>
-      <yloc>80</yloc>
-      <width>487</width>
-      <heigth>54</heigth>
-      <fontname>Calibri Light</fontname>
+      <note>Exercise 5 - Part II: Parallel Processing (Counter Different)</note>
+      <xloc>16</xloc>
+      <yloc>16</yloc>
+      <width>434</width>
+      <heigth>29</heigth>
+      <fontname>Tahoma</fontname>
       <fontsize>11</fontsize>
       <fontbold>N</fontbold>
       <fontitalic>N</fontitalic>
-      <fontcolorred>0</fontcolorred>
+      <fontcolorred>255</fontcolorred>
       <fontcolorgreen>0</fontcolorgreen>
       <fontcolorblue>0</fontcolorblue>
       <backgroundcolorred>255</backgroundcolorred>
       <backgroundcolorgreen>255</backgroundcolorgreen>
       <backgroundcolorblue>255</backgroundcolorblue>
-      <bordercolorred>255</bordercolorred>
-      <bordercolorgreen>255</bordercolorgreen>
-      <bordercolorblue>255</bordercolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
       <drawshadow>Y</drawshadow>
     </notepad>
   </notepads>
   <order>
     <hop>
-      <from>Generate Rows</from>
-      <to>Modified Java Script Value</to>
+      <from>gr-path1</from>
+      <to>aseq-path1</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>aseq-path1</from>
+      <to>dmmy-combined_data</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>gr-path2</from>
+      <to>aseq-path2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>aseq-path2</from>
+      <to>dmmy-combined_data</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>Generate Rows</name>
+    <name>aseq-path1</name>
+    <type>Sequence</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <valuename>valuename</valuename>
+    <use_database>N</use_database>
+    <connection/>
+    <schema/>
+    <seqname>SEQ_</seqname>
+    <use_counter>Y</use_counter>
+    <counter_name>counter1</counter_name>
+    <start_at>1</start_at>
+    <increment_by>1</increment_by>
+    <max_value>999999999</max_value>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>288</xloc>
+      <yloc>96</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>aseq-path2</name>
+    <type>Sequence</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <valuename>valuename</valuename>
+    <use_database>N</use_database>
+    <connection/>
+    <schema/>
+    <seqname>SEQ_</seqname>
+    <use_counter>Y</use_counter>
+    <counter_name>counter2</counter_name>
+    <start_at>1</start_at>
+    <increment_by>1</increment_by>
+    <max_value>999999999</max_value>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>288</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>dmmy-combined_data</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>512</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>gr-path1</name>
     <type>RowGenerator</type>
     <description/>
     <distribute>Y</distribute>
@@ -519,36 +586,12 @@ characters in the field and fieldsame, stream fields.</note>
       <schema_name/>
     </partitioning>
     <fields>
-      <field>
-        <name>field</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif>This is a String \ with / some weird characters - in it!</nullif>
-        <length>100</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>fieldsame</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif>This is a String // with - some weird characters - in it!</nullif>
-        <length>100</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
     </fields>
-    <limit>1</limit>
+    <limit>1000</limit>
     <never_ending>N</never_ending>
-    <interval_in_ms/>
-    <row_time_field/>
-    <last_time_field/>
+    <interval_in_ms>5000</interval_in_ms>
+    <row_time_field>now</row_time_field>
+    <last_time_field>FiveSecondsAgo</last_time_field>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -558,14 +601,14 @@ characters in the field and fieldsame, stream fields.</note>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>192</xloc>
-      <yloc>160</yloc>
+      <xloc>64</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Modified Java Script Value</name>
-    <type>ScriptValueMod</type>
+    <name>gr-path2</name>
+    <type>RowGenerator</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -574,38 +617,13 @@ characters in the field and fieldsame, stream fields.</note>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>
-      <jsScript>
-        <jsScript_type>0</jsScript_type>
-        <jsScript_name>ScriptValue</jsScript_name>
-        <jsScript_script>var result=field.replace("/", "").replace("\\", "").replace("-", "").replace("!", "");
-
-// another possibilty: different syntax
-
-// mind the change in the backslash here (4x\ instead of 2x\)!
-var resultfieldsame= replace(fieldsame, "/", "", "\\\\", "", "-", "");</jsScript_script>
-      </jsScript>
-    </jsScripts>
     <fields>
-      <field>
-        <name>result</name>
-        <rename>result</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>
-      <field>
-        <name>resultfieldsame</name>
-        <rename>resultfieldsame</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>
     </fields>
+    <limit>1000</limit>
+    <never_ending>N</never_ending>
+    <interval_in_ms>5000</interval_in_ms>
+    <row_time_field>now</row_time_field>
+    <last_time_field>FiveSecondsAgo</last_time_field>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -615,8 +633,8 @@ var resultfieldsame= replace(fieldsame, "/", "", "\\\\", "", "-", "");</jsScript
       </output>
     </remotesteps>
     <GUI>
-      <xloc>192</xloc>
-      <yloc>288</yloc>
+      <xloc>64</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -625,5 +643,9 @@ var resultfieldsame= replace(fieldsame, "/", "", "\\\\", "", "-", "");</jsScript
   <slave-step-copy-partition-distribution>
   </slave-step-copy-partition-distribution>
   <slave_transformation>N</slave_transformation>
-  <attributes/>
+  <attributes>
+    <group>
+      <name>explorerState</name>
+    </group>
+  </attributes>
 </transformation>
