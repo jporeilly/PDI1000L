@@ -698,7 +698,7 @@ renames the field.  </note>
     <hop>
       <from>fr-w_postalcode</from>
       <to>to-sales_data_ex6</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>csvi-zipssortedbycitystate.csv</from>
@@ -718,6 +718,11 @@ renames the field.  </note>
     <hop>
       <from>sv-prepare_field_layout</from>
       <to>to-sales_data_ex6</to>
+      <enabled>N</enabled>
+    </hop>
+    <hop>
+      <from>fr-w_postalcode</from>
+      <to>Dummy (do nothing)</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -732,7 +737,7 @@ renames the field.  </note>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/home/pentaho/Pentaho/design-tools/data-integration/samples/transformations/files/sales_data.csv</filename>
+    <filename>C:\Pentaho\design-tools\data-integration\samples\transformations\files\sales_data.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -1037,7 +1042,7 @@ renames the field.  </note>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>/home/pentaho/Pentaho/design-tools/data-integration/samples/transformations/files/Zipssortedbycitystate.csv</filename>
+    <filename>C:\Pentaho\design-tools\data-integration\samples\transformations\files\Zipssortedbycitystate.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -1111,7 +1116,7 @@ renames the field.  </note>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <send_true_to>to-sales_data_ex6</send_true_to>
+    <send_true_to>Dummy (do nothing)</send_true_to>
     <send_false_to>slkp-get_postalcodes</send_false_to>
     <compare>
       <condition>
@@ -1339,6 +1344,31 @@ renames the field.  </note>
     <GUI>
       <xloc>816</xloc>
       <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Dummy (do nothing)</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>592</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
